@@ -1,0 +1,522 @@
+/* latin */
+@font-face {
+  font-family: 'Droid Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans Mono'), local('DroidSansMono'), url(https://fonts.gstatic.com/s/droidsansmono/v7/ns-m2xQYezAtqh7ai59hJYdJ2JT0J65PSe7wdxAnx_I.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+    font-family: 'IBMOLD';
+    src: url(http://homepage.tudelft.nl/9t10z/fonts/oldschool.woff2);
+}
+
+.oldtitle {
+	font-family: 'IBMOLD';
+}
+
+body {
+	padding-bottom: 60px;
+	font-family: 'Droid Sans Mono', monospace, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	scrollbar-base-color: #333333;
+	scrollbar-base-color: #333333;
+	scrollbar-3dlight-color: #333333;
+	scrollbar-highlight-color: #333333;
+	scrollbar-track-color: transparent;
+	scrollbar-arrow-color: #333333;
+	scrollbar-shadow-color: #333333;
+	scrollbar-dark-shadow-color: #333333;
+}
+@media (min-width:981px) {
+	body {
+		padding-top: 60px !important;
+	}
+}
+@media (max-width:767px) {
+	body {
+		padding-top: 60px !important;
+	}
+}
+::-webkit-scrollbar-track
+{
+	background-color: transparent;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #333333;
+}
+::-scrollbar-track
+{
+	background-color: #fff;
+}
+
+::-scrollbar
+{
+	width: 10px;
+	background-color: #fff;
+}
+
+::-scrollbar-thumb
+{
+	background-color: #333333;
+}
+.jumbotron {
+	background-color: #ffffff;
+}
+.navbar {
+	margin-bottom: 0;
+	background-color: #333333;
+	z-index: 9999;
+	border: 0;
+	border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+	color: #fff !important;
+}
+
+.navbar-inverse {
+	background-color: transparent;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+
+.navbar-inverse:hover {
+	background-color: #fff;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+	color: #fff !important;
+	background-color: #444444 !important;
+}
+
+.navbar-inverse .navbar-toggle {
+	border-color: transparent;
+	color: #fff !important;
+}
+
+hr.lang {
+	padding: 0;
+	border: none;
+	border-top: dashed 1.5pt;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.lang:after {
+	content: "LANGUAGE";
+	display: inline-block;
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.start_lang {
+	-webkit-transition: width 5s ease; /* For Safari 3.1 to 6.0 */
+    transition: width 5s  ease;
+	width: 125px;
+	padding: 0;
+	border: none;
+	border-top: dashed 1.5pt transparent;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.start_lang:after {
+	content: "LANGUAGE";
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.end_lang {
+	width: 100%;
+	padding: 0;
+	border: none;
+	border-top: dashed 1.5pt;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.end_lang:after {
+	content: "LANGUAGE";
+	display: inline-block;
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.start_jpconts {
+	-webkit-transition: width 5s ease; /* For Safari 3.1 to 6.0 */
+    transition: width 5s  ease;
+	width: 60px;
+	padding: 0;
+	border: none;
+	border-top: dashed 1.5pt transparent;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.start_jpconts:after {
+	content: "内容";
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.end_jpconts {
+	width: 100%;
+	padding: 0;
+	border: none;
+	border-top: dashed 1.5pt;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.end_jpconts:after {
+	content: "内容";
+	display: inline-block;
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.start_nlconts {
+	-webkit-transition: width 5s ease; /* For Safari 3.1 to 6.0 */
+    transition: width 5s  ease;
+	width: 125px;
+	padding: 0;
+	border: none;
+	border-top: dashed 1.5pt transparent;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.start_nlconts:after {
+	content: "INHOUD";
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.end_nlconts {
+	width: 100%;
+	padding: 0;
+	border: none;
+	border-top: dashed 1.5pt;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.end_nlconts:after {
+	content: "INHOUD";
+	display: inline-block;
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.start_enconts {
+	-webkit-transition: width 5s ease; /* For Safari 3.1 to 6.0 */
+    transition: width 5s  ease;
+	width: 100px;
+	padding: 0;
+	border: none;
+	border-top: dashed 1.5pt transparent;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.start_enconts:after {
+	content: "CONTENT";
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.end_enconts {
+	width: 100%;
+	padding: 0;
+	border: none;
+	border-top: dashed 1.5pt;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.end_enconts:after {
+	content: "CONTENT";
+	display: inline-block;
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.nl_conts {
+	padding: 0;
+	border: none;
+	border-top: dashed 1.5pt;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.nl_conts:after {
+	content: "INHOUD";
+	display: inline-block;
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.en_conts {
+	padding: 0;
+	border: none;
+	border-top: dashed 1.5pt;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.en_conts:after {
+	content: "CONTENT";
+	display: inline-block;
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+a.sharp {
+	border-radius:0;
+	border-color: #333333;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+a.sharp:hover, a.sharp:focus, a.sharp:focus:active, a.sharp:active {
+	border-color: #333333;
+	background-color: #333333;
+	color: #fff;
+	box-shadow:
+		  0 0 0 1.5px hsl(0, 0%, 70%),
+		  0 0 0 3px hsl(0, 0%, 80%),
+		  0 0 0 4.5px hsl(0, 0%, 90%);
+}
+
+a.sharp:hover:active {
+	border-color: #444444;
+	background-color: #444444;
+	color: #fff;
+	box-shadow:
+	  0 0 0 1px hsl(0, 0%, 70%),
+	  0 0 0 2px hsl(0, 0%, 80%),
+	  0 0 0 3px hsl(0, 0%, 90%);
+}
+
+.breadcrumb.next>li+li:before { padding: 0 5px; color: #333333; content: "> "; }
+
+.breadcrumb.empty>li+li:before { padding: 0 5px; color: #333333; content: " "; }
+
+.dropdown-menu {
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+.dropdown-menu.language {
+	box-shadow: none;
+	border-radius: 0;
+	min-width: 30px;
+	background-color: transparent;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+.dropdown-menu:hover {
+	box-shadow:
+	  0 0 0 1.5px hsl(0, 0%, 70%),
+	  0 0 0 3px hsl(0, 0%, 80%),
+	  0 0 0 4.5px hsl(0, 0%, 90%);
+}
+
+.dropdown-menu:hover:active {
+	box-shadow:
+	  0 0 0 1px hsl(0, 0%, 70%),
+	  0 0 0 2px hsl(0, 0%, 80%),
+	  0 0 0 3px hsl(0, 0%, 90%);
+}
+
+.dropdown-menu.language:hover {
+	background-color: #fff;
+}
+
+.dropdown-menu.language li {
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	background-color: transparent;
+}
+.dropdown-menu.language li:hover {
+	background-color: #F5F5F5;
+}
+		
+.Logo {
+	width: 100px;
+	height: auto;
+}
+
+.logo_center:hover {
+	transform: scale(1.25);
+}
+
+.logo_center {
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	display: block;
+	transform-origin: 50% 50%;
+}
+
+.color1 {
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	display: block;
+	transform-origin: 50% 50%;
+	animation: bounceIn 0.2s ease-in-out 0s forwards;
+}
+
+.color2m {
+	-webkit-animation-delay: 1s;
+    animation-delay: 1s;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	display: block;
+	transform-origin: 50% 50%;
+	animation: bounceIn 0.2s ease-in 0.1s forwards;
+}
+.color2l {
+	-webkit-animation-delay: 1s;
+    animation-delay: 1s;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	display: block;
+	transform-origin: 50% 50%;
+	animation: bounceIn 0.2s ease-in 0.2s forwards;
+}
+.color2r {
+	-webkit-animation-delay: 1s;
+    animation-delay: 1s;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	display: block;
+	transform-origin: 50% 50%;
+	animation: bounceIn 0.2s ease-in 0.2s forwards;
+}
+
+.color3l {
+	-webkit-animation-delay: 1s;
+    animation-delay: 1s;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	display: block;
+	transform-origin: 50% 50%;
+	animation: bounceIn 0.2s ease-in 0.3s forwards;
+}
+.color3r {
+	-webkit-animation-delay: 1s;
+    animation-delay: 1s;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	display: block;
+	transform-origin: 50% 50%;
+	animation: bounceIn 0.2s ease-in 0.3s forwards;
+}
+.color3m {
+	-webkit-animation-delay: 1s;
+    animation-delay: 1s;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	display: block;
+	transform-origin: 50% 50%;
+	animation: bounceIn 0.2s ease-in 0.4s forwards;
+}
+
+.color4 {
+	-webkit-animation-delay: 1s;
+    animation-delay: 1s;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	display: block;
+	transform-origin: 50% 50%;
+	animation: bounceIn 0.2s ease-in 0.5s forwards;
+}
+
+@keyframes bounceIn {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	} 
+	
+	50% {
+		opacity: 1;
+		transform: scale(1.25);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
