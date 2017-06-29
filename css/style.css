@@ -1,15 +1,48 @@
-/* latin */
 @font-face {
   font-family: 'Droid Sans Mono';
   font-style: normal;
   font-weight: 400;
-  src: local('Droid Sans Mono'), local('DroidSansMono'), url(https://fonts.gstatic.com/s/droidsansmono/v7/ns-m2xQYezAtqh7ai59hJYdJ2JT0J65PSe7wdxAnx_I.woff2) format('woff2');
+  src: local('Droid Sans Mono'), local('DroidSansMono'), url(../fonts/DroidSansMono.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+   font-family: 'Noto Sans Japanese';
+   font-style: normal;
+   font-weight: 400;
+   src: url(../fonts/NotoSansJP-Regular.woff2) format('woff2'),
+        url(../fonts/NotoSansJP-Regular.woff) format('woff'),
+        url(../fonts/NotoSansJP-Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/NotoSans-Regular.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/NotoSans-Italic.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: bold;
+  font-weight: 700;
+  src: url(../fonts/NotoSans-Bold.ttf) format('ttf');
+}
+
+kbd {
+	font-family: 'Droid Sans Mono', 'Noto Sans Japanese', 'Noto Sans' !important;
 }
 
 body {
 	padding-bottom: 60px;
-	font-family: 'Droid Sans Mono', monospace, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-family: 'Noto Sans', 'Noto Sans Japanese' !important;
 	scrollbar-base-color: #333333;
 	scrollbar-base-color: #333333;
 	scrollbar-3dlight-color: #333333;
@@ -63,6 +96,7 @@ body {
 	background-color: #ffffff;
 }
 .navbar {
+	font-family: 'Droid Sans Mono', 'Noto Sans Japanese', 'Noto Sans';
 	margin-bottom: 0;
 	background-color: #333333;
 	z-index: 9999;
@@ -74,11 +108,15 @@ body {
 	color: #fff !important;
 }
 
+.navbar {
+	filter:none!important;
+}
 .navbar-inverse {
 	background-color: transparent;
 	-webkit-transition-duration: 0.2s;
 	-moz-transition-duration: 0.2s;
 	transition-duration: 0.2s;
+	filter:none!important;
 }
 
 .navbar-inverse:hover {
@@ -107,6 +145,7 @@ hr.lang {
 	font-weight: bold;
 }
 hr.lang:after {
+	font-family: 'Droid Sans Mono';
 	content: "LANGUAGE";
 	display: inline-block;
 	position: relative;
@@ -128,6 +167,7 @@ hr.start_lang {
 	font-weight: bold;
 }
 hr.start_lang:after {
+	font-family: 'Droid Sans Mono';
 	content: "LANGUAGE";
 	position: relative;
 	top: -0.8em;
@@ -146,6 +186,7 @@ hr.end_lang {
 	font-weight: bold;
 }
 hr.end_lang:after {
+	font-family: 'Droid Sans Mono';
 	content: "LANGUAGE";
 	display: inline-block;
 	position: relative;
@@ -206,6 +247,7 @@ hr.start_nlconts {
 	font-weight: bold;
 }
 hr.start_nlconts:after {
+	font-family: 'Droid Sans Mono';
 	content: "INHOUD";
 	position: relative;
 	top: -0.8em;
@@ -224,6 +266,7 @@ hr.end_nlconts {
 	font-weight: bold;
 }
 hr.end_nlconts:after {
+	font-family: 'Droid Sans Mono';
 	content: "INHOUD";
 	display: inline-block;
 	position: relative;
@@ -245,6 +288,7 @@ hr.start_enconts {
 	font-weight: bold;
 }
 hr.start_enconts:after {
+	font-family: 'Droid Sans Mono';
 	content: "CONTENT";
 	position: relative;
 	top: -0.8em;
@@ -263,6 +307,7 @@ hr.end_enconts {
 	font-weight: bold;
 }
 hr.end_enconts:after {
+	font-family: 'Droid Sans Mono';
 	content: "CONTENT";
 	display: inline-block;
 	position: relative;
@@ -281,6 +326,7 @@ hr.nl_conts {
 	font-weight: bold;
 }
 hr.nl_conts:after {
+	font-family: 'Droid Sans Mono';
 	content: "INHOUD";
 	display: inline-block;
 	position: relative;
@@ -299,6 +345,7 @@ hr.en_conts {
 	font-weight: bold;
 }
 hr.en_conts:after {
+	font-family: 'Droid Sans Mono';
 	content: "CONTENT";
 	display: inline-block;
 	position: relative;
@@ -309,6 +356,7 @@ hr.en_conts:after {
 }
 
 a.sharp {
+	font-family: 'Droid Sans Mono';
 	border-radius:0;
 	border-color: #333333;
 	-webkit-transition-duration: 0.2s;
@@ -510,4 +558,52 @@ a.sharp:hover:active {
 		opacity: 1;
 		transform: scale(1);
 	}
+}
+
+div .vertical-jp {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+div .vertical-jp p {
+	-ms-writing-mode: tb-rl;
+	-webkit-writing-mode: vertical-rl;
+	-moz-writing-mode: vertical-rl;
+	-ms-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+	-webkit-text-orientation: upright;
+	-moz-text-orientation: upright;
+	-ms-text-orientation: upright;
+	text-orientation: upright;
+	font-size: 16pt !important;
+	min-height: 450px;
+}
+
+.stylized-title {
+	font-family: 'Droid Sans Mono', 'Noto Sans Japanese', 'Noto Sans';
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.stylized-title:before {
+	content: "／／";
+}
+
+.stylized-title:after {
+	content: "／／";
+}
+
+.cv-description {
+	font-family: 'Droid Sans Mono', 'Noto Sans Japanese', 'Noto Sans';
+	font-size: 16px;
+	table-layout: fixed;
+}
+
+.cv-description-wofont {
+	font-size: 16px;
+	table-layout: fixed;
+}
+
+.stylized-font {
+	font-family: 'Droid Sans Mono', 'Noto Sans Japanese', 'Noto Sans';
 }
