@@ -388,7 +388,7 @@ a.sharp:hover:active {
 	  0 0 0 3px hsl(0, 0%, 90%);
 }
 
-.breadcrumb.next>li+li:before { padding: 0 5px; color: #333333; content: "> "; }
+.breadcrumb.next>li+li:before { padding: 0 5px; color: #333333; content: "» "; }
 
 .breadcrumb.empty>li+li:before { padding: 0 5px; color: #333333; content: " "; }
 
@@ -565,7 +565,7 @@ div .vertical-jp {
 	flex-direction: row-reverse;
 }
 
-div .vertical-jp p {
+.vertical-jp p {
 	-ms-writing-mode: tb-rl;
 	-webkit-writing-mode: vertical-rl;
 	-moz-writing-mode: vertical-rl;
