@@ -443,6 +443,32 @@ a.sharp:hover:active {
 .dropdown-menu.language li:hover {
 	background-color: #F5F5F5;
 }
+
+.Radix:hover .radix_background {
+	fill: #21409A;
+}
+
+.Radix:hover .radix_root {
+	fill: white;
+}
+
+.radix_background {
+	-webkit-transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	display: block;
+	transform-origin: 50% 50%;
+	fill: white;
+}
+
+.radix_root {
+	-webkit-transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	display: block;
+	transform-origin: 50% 50%;
+	fill: black;
+}
 		
 .Logo {
 	width: 100px;
