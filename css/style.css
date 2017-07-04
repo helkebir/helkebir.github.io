@@ -38,6 +38,16 @@
 
 kbd {
 	font-family: 'Droid Sans Mono', 'Noto Sans Japanese', 'Noto Sans' !important;
+	background-color: #333333;
+	color: white;
+	-webkit-transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
+}
+
+kbd:hover {
+	background-color: white;
+	color: #333333;
 }
 
 body {
@@ -109,21 +119,23 @@ body {
 }
 
 .navbar {
-	filter:none!important;
+	-webkit-filter:none!important;
+	        filter:none!important;
 }
 .navbar-inverse {
 	background-color: transparent;
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
-	filter:none!important;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
+	-webkit-filter:none!important;
+	        filter:none!important;
 }
 
 .navbar-inverse:hover {
 	background-color: #fff;
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
@@ -157,6 +169,8 @@ hr.lang:after {
 
 hr.start_lang {
 	-webkit-transition: width 5s ease; /* For Safari 3.1 to 6.0 */
+    -webkit-transition: width 5s  ease;
+    -o-transition: width 5s  ease;
     transition: width 5s  ease;
 	width: 125px;
 	padding: 0;
@@ -198,6 +212,8 @@ hr.end_lang:after {
 
 hr.start_jpconts {
 	-webkit-transition: width 5s ease; /* For Safari 3.1 to 6.0 */
+    -webkit-transition: width 5s  ease;
+    -o-transition: width 5s  ease;
     transition: width 5s  ease;
 	width: 60px;
 	padding: 0;
@@ -237,6 +253,8 @@ hr.end_jpconts:after {
 
 hr.start_nlconts {
 	-webkit-transition: width 5s ease; /* For Safari 3.1 to 6.0 */
+    -webkit-transition: width 5s  ease;
+    -o-transition: width 5s  ease;
     transition: width 5s  ease;
 	width: 125px;
 	padding: 0;
@@ -278,6 +296,8 @@ hr.end_nlconts:after {
 
 hr.start_enconts {
 	-webkit-transition: width 5s ease; /* For Safari 3.1 to 6.0 */
+    -webkit-transition: width 5s  ease;
+    -o-transition: width 5s  ease;
     transition: width 5s  ease;
 	width: 100px;
 	padding: 0;
@@ -360,8 +380,8 @@ a.sharp {
 	border-radius:0;
 	border-color: #333333;
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	-webkit-user-select:none;
 	-moz-user-select:none;
 	-ms-user-select:none;
@@ -372,7 +392,11 @@ a.sharp:hover, a.sharp:focus, a.sharp:focus:active, a.sharp:active {
 	border-color: #333333;
 	background-color: #333333;
 	color: #fff;
-	box-shadow:
+	-webkit-box-shadow:
+		  0 0 0 1.5px hsl(0, 0%, 70%),
+		  0 0 0 3px hsl(0, 0%, 80%),
+		  0 0 0 4.5px hsl(0, 0%, 90%);
+	        box-shadow:
 		  0 0 0 1.5px hsl(0, 0%, 70%),
 		  0 0 0 3px hsl(0, 0%, 80%),
 		  0 0 0 4.5px hsl(0, 0%, 90%);
@@ -382,7 +406,11 @@ a.sharp:hover:active {
 	border-color: #444444;
 	background-color: #444444;
 	color: #fff;
-	box-shadow:
+	-webkit-box-shadow:
+	  0 0 0 1px hsl(0, 0%, 70%),
+	  0 0 0 2px hsl(0, 0%, 80%),
+	  0 0 0 3px hsl(0, 0%, 90%);
+	        box-shadow:
 	  0 0 0 1px hsl(0, 0%, 70%),
 	  0 0 0 2px hsl(0, 0%, 80%),
 	  0 0 0 3px hsl(0, 0%, 90%);
@@ -394,8 +422,8 @@ a.sharp:hover:active {
 
 .dropdown-menu {
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	-webkit-user-select:none;
 	-moz-user-select:none;
 	-ms-user-select:none;
@@ -403,13 +431,14 @@ a.sharp:hover:active {
 }
 
 .dropdown-menu.language {
-	box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 	border-radius: 0;
 	min-width: 30px;
 	background-color: transparent;
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	-webkit-user-select:none;
 	-moz-user-select:none;
 	-ms-user-select:none;
@@ -417,14 +446,22 @@ a.sharp:hover:active {
 }
 
 .dropdown-menu:hover {
-	box-shadow:
+	-webkit-box-shadow:
+	  0 0 0 1.5px hsl(0, 0%, 70%),
+	  0 0 0 3px hsl(0, 0%, 80%),
+	  0 0 0 4.5px hsl(0, 0%, 90%);
+	        box-shadow:
 	  0 0 0 1.5px hsl(0, 0%, 70%),
 	  0 0 0 3px hsl(0, 0%, 80%),
 	  0 0 0 4.5px hsl(0, 0%, 90%);
 }
 
 .dropdown-menu:hover:active {
-	box-shadow:
+	-webkit-box-shadow:
+	  0 0 0 1px hsl(0, 0%, 70%),
+	  0 0 0 2px hsl(0, 0%, 80%),
+	  0 0 0 3px hsl(0, 0%, 90%);
+	        box-shadow:
 	  0 0 0 1px hsl(0, 0%, 70%),
 	  0 0 0 2px hsl(0, 0%, 80%),
 	  0 0 0 3px hsl(0, 0%, 90%);
@@ -436,8 +473,8 @@ a.sharp:hover:active {
 
 .dropdown-menu.language li {
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	background-color: transparent;
 }
 .dropdown-menu.language li:hover {
@@ -454,19 +491,23 @@ a.sharp:hover:active {
 
 .radix_background {
 	-webkit-transition-duration: 0.4s;
-	-moz-transition-duration: 0.4s;
-	transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	   transition-duration: 0.4s;
 	display: block;
-	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
 	fill: white;
 }
 
 .radix_root {
 	-webkit-transition-duration: 0.4s;
-	-moz-transition-duration: 0.4s;
-	transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	   transition-duration: 0.4s;
 	display: block;
-	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
 	fill: black;
 }
 		
@@ -476,119 +517,175 @@ a.sharp:hover:active {
 }
 
 .logo_center:hover {
-	transform: scale(1.25);
+	-webkit-transform: scale(1.25);
+	    -ms-transform: scale(1.25);
+	        transform: scale(1.25);
 }
 
 .logo_center {
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	display: block;
-	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
 }
 
 .color1 {
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	display: block;
-	transform-origin: 50% 50%;
-	animation: bounceIn 0.2s ease-in-out 0s forwards;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
+	-webkit-animation: bounceIn 0.2s ease-in-out 0s forwards;
+	        animation: bounceIn 0.2s ease-in-out 0s forwards;
 }
 
 .color2m {
 	-webkit-animation-delay: 1s;
     animation-delay: 1s;
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	display: block;
-	transform-origin: 50% 50%;
-	animation: bounceIn 0.2s ease-in 0.1s forwards;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
+	-webkit-animation: bounceIn 0.2s ease-in 0.1s forwards;
+	        animation: bounceIn 0.2s ease-in 0.1s forwards;
 }
 .color2l {
 	-webkit-animation-delay: 1s;
     animation-delay: 1s;
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	display: block;
-	transform-origin: 50% 50%;
-	animation: bounceIn 0.2s ease-in 0.2s forwards;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
+	-webkit-animation: bounceIn 0.2s ease-in 0.2s forwards;
+	        animation: bounceIn 0.2s ease-in 0.2s forwards;
 }
 .color2r {
 	-webkit-animation-delay: 1s;
     animation-delay: 1s;
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	display: block;
-	transform-origin: 50% 50%;
-	animation: bounceIn 0.2s ease-in 0.2s forwards;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
+	-webkit-animation: bounceIn 0.2s ease-in 0.2s forwards;
+	        animation: bounceIn 0.2s ease-in 0.2s forwards;
 }
 
 .color3l {
 	-webkit-animation-delay: 1s;
     animation-delay: 1s;
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	display: block;
-	transform-origin: 50% 50%;
-	animation: bounceIn 0.2s ease-in 0.3s forwards;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
+	-webkit-animation: bounceIn 0.2s ease-in 0.3s forwards;
+	        animation: bounceIn 0.2s ease-in 0.3s forwards;
 }
 .color3r {
 	-webkit-animation-delay: 1s;
     animation-delay: 1s;
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	display: block;
-	transform-origin: 50% 50%;
-	animation: bounceIn 0.2s ease-in 0.3s forwards;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
+	-webkit-animation: bounceIn 0.2s ease-in 0.3s forwards;
+	        animation: bounceIn 0.2s ease-in 0.3s forwards;
 }
 .color3m {
 	-webkit-animation-delay: 1s;
     animation-delay: 1s;
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	display: block;
-	transform-origin: 50% 50%;
-	animation: bounceIn 0.2s ease-in 0.4s forwards;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
+	-webkit-animation: bounceIn 0.2s ease-in 0.4s forwards;
+	        animation: bounceIn 0.2s ease-in 0.4s forwards;
 }
 
 .color4 {
 	-webkit-animation-delay: 1s;
     animation-delay: 1s;
 	-webkit-transition-duration: 0.2s;
-	-moz-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	   transition-duration: 0.2s;
 	display: block;
-	transform-origin: 50% 50%;
-	animation: bounceIn 0.2s ease-in 0.5s forwards;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
+	-webkit-animation: bounceIn 0.2s ease-in 0.5s forwards;
+	        animation: bounceIn 0.2s ease-in 0.5s forwards;
+}
+
+@-webkit-keyframes bounceIn {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		        transform: scale(1);
+	} 
+	
+	50% {
+		opacity: 1;
+		-webkit-transform: scale(1.25);
+		        transform: scale(1.25);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		        transform: scale(1);
+	}
 }
 
 @keyframes bounceIn {
 	0% {
 		opacity: 1;
-		transform: scale(1);
+		-webkit-transform: scale(1);
+		        transform: scale(1);
 	} 
 	
 	50% {
 		opacity: 1;
-		transform: scale(1.25);
+		-webkit-transform: scale(1.25);
+		        transform: scale(1.25);
 	}
 
 	100% {
 		opacity: 1;
-		transform: scale(1);
+		-webkit-transform: scale(1);
+		        transform: scale(1);
 	}
 }
 
 div .vertical-jp {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row-reverse;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	    -ms-flex-direction: row-reverse;
+	        flex-direction: row-reverse;
 }
 
 .vertical-jp p {

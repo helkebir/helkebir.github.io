@@ -4,10 +4,17 @@
     <title>CV - Hamza El-Kebir</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+	<link rel="manifest" href="../../manifest.json">
+	<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#444444">
+	<meta name="theme-color" content="#444444">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/style.css">
     <script src="../../js/jquery-3.2.1.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/typewriter.js"></script>
     <style>
 		th.fwidth, td.fwidth {
 			width: 40%;
@@ -30,7 +37,7 @@
 		<hr width="100%" class="start_enconts" />
     </div>
 	<div style="padding-left: 10%; padding-right: 10%;">
-		<div class="stylized-title">PERSONAL DETAILS</div>
+		<div class="stylized-title" id="personal-info">PERSONAL DETAILS</div>
 		<table class="cv-description-wofont">
 			<tbody>
 				<tr>
@@ -53,7 +60,7 @@
 		
 		<br /><br /><br />
 		
-		<div class="stylized-title">WORK EXPERIENCE</div>
+		<div class="stylized-title" id="experience">WORK EXPERIENCE</div>
 		<table class="cv-description">
 			<tbody>
 				<tr>
@@ -128,7 +135,7 @@
 		
 		<br /><br /><br /><br />
 		
-		<div class="stylized-title">EDUCATION</div>
+		<div class="stylized-title" id="education">EDUCATION</div>
 		<table class="cv-description">
 			<tbody>
 				<tr>
@@ -155,7 +162,7 @@
 		
 		<br /><br /><br /><br />
 		
-		<div class="stylized-title">CERTIFICATES & AWARDS</div>
+		<div class="stylized-title" id="certificates">CERTIFICATES & AWARDS</div>
 		<table class="cv-description">
 			<tbody>
 				<tr>
@@ -230,7 +237,7 @@
 		
 		<br /><br /><br /><br />
 		
-		<div class="stylized-title">COMPUTER SKILLS</div>
+		<div class="stylized-title" id="computer-skills">COMPUTER SKILLS</div>
 		<table class="cv-description">
 			<tbody>
 				<tr>
@@ -260,7 +267,7 @@
 		
 		<br /><br /><br /><br />
 		
-		<div class="stylized-title">OTHER INFORMATION</div>
+		<div class="stylized-title" id="other-info">OTHER INFORMATION</div>
 		<table>
 			<tbody>
 				<tr>
@@ -363,6 +370,72 @@
 		setTimeout(function(){
 			$('.start_enconts').addClass('end_enconts');
 		}, 275);
+
+		var typewriter_pers = new Typewriter(document.getElementById('personal-info'), {
+			loop: false,
+			cursor: '',
+			animateCursor: false,
+			typingSpeed: 'natural'
+		});
+
+		var typewriter_xp = new Typewriter(document.getElementById('experience'), {
+			loop: false,
+			cursor: '',
+			animateCursor: false,
+			typingSpeed: 'natural'
+		});
+
+		var typewriter_edu = new Typewriter(document.getElementById('education'), {
+			loop: false,
+			cursor: '',
+			animateCursor: false,
+			typingSpeed: 'natural'
+		});
+
+		var typewriter_cert = new Typewriter(document.getElementById('certificates'), {
+			loop: false,
+			cursor: '',
+			animateCursor: false,
+			typingSpeed: 'natural'
+		});
+
+		var typewriter_comp = new Typewriter(document.getElementById('computer-skills'), {
+			loop: false,
+			cursor: '',
+			animateCursor: false,
+			typingSpeed: 'natural'
+		});
+
+		var typewriter_other = new Typewriter(document.getElementById('other-info'), {
+			loop: false,
+			cursor: '',
+			animateCursor: false,
+			typingSpeed: 'natural'
+		});
+
+		typewriter_pers.pauseFor(1000)
+			.typeString('PERSONAL DETAILS')
+			.start();
+
+		typewriter_xp.pauseFor(2000)
+			.typeString('WORK EXPERIENCE')
+			.start();
+
+		typewriter_edu.pauseFor(3000)
+			.typeString('EDUCATION')
+			.start();
+
+		typewriter_cert.pauseFor(4000)
+			.typeString('CERTIFICATES & AWARDS')
+			.start();
+
+		typewriter_comp.pauseFor(5000)
+			.typeString('COMPUTER SKILLS')
+			.start();
+
+		typewriter_other.pauseFor(6000)
+			.typeString('OTHER INFORMATION')
+			.start();
 	</script>
 </body>
 </html>

@@ -4,10 +4,17 @@
     <title>履歴書 - Hamza El-Kebir</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+	<link rel="manifest" href="../../manifest.json">
+	<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#444444">
+	<meta name="theme-color" content="#444444">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/style.css">
     <script src="../../js/jquery-3.2.1.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/typewriter.js"></script>
     <style>
 		th.fwidth, td.fwidth {
 			width: 35%;
@@ -30,7 +37,7 @@
 		<hr width="100%" class="start_jpconts" />
     </div>
 	<div style="padding-left: 10%; padding-right: 10%;">
-		<div class="stylized-title">個人情報</div>
+		<div class="stylized-title" id="personal-info">個人情報</div>
 		<table class="cv-description-wofont">
 			<tbody>
 				<tr>
@@ -53,7 +60,7 @@
 		
 		<br /><br /><br />
 		
-		<div class="stylized-title">職歴</div>
+		<div class="stylized-title" id="experience">職歴</div>
 		<table class="cv-description">
 			<tbody>
 				<tr>
@@ -128,7 +135,7 @@
 		
 		<br /><br /><br /><br />
 		
-		<div class="stylized-title">学歴</div>
+		<div class="stylized-title" id="education">学歴</div>
 		<table class="cv-description">
 			<tbody>
 				<tr>
@@ -155,7 +162,7 @@
 		
 		<br /><br /><br /><br />
 		
-		<div class="stylized-title">免許・資格</div>
+		<div class="stylized-title" id="certificates">免許・資格</div>
 		<table class="cv-description">
 			<tbody>
 				<tr>
@@ -230,7 +237,7 @@
 		
 		<br /><br /><br /><br />
 		
-		<div class="stylized-title">パソコン技能</div>
+		<div class="stylized-title" id="computer-skills">パソコン技能</div>
 		<table class="cv-description">
 			<tbody>
 				<tr>
@@ -260,7 +267,7 @@
 		
 		<br /><br /><br /><br />
 		
-		<div class="stylized-title">その他の情報</div>
+		<div class="stylized-title" id="other-info">その他の情報</div>
 		<table>
 			<tbody>
 				<tr>
@@ -363,6 +370,152 @@
 		setTimeout(function(){
 			$('.start_jpconts').addClass('end_jpconts');
 		}, 275);
+
+		var typewriter_pers = new Typewriter(document.getElementById('personal-info'), {
+			loop: false,
+			cursor: '',
+			animateCursor: false,
+			typingSpeed: 'natural',
+			deleteSpeed: 30
+		});
+
+		var typewriter_xp = new Typewriter(document.getElementById('experience'), {
+			loop: false,
+			cursor: '',
+			animateCursor: false,
+			typingSpeed: 'natural',
+			deleteSpeed: 30
+		});
+
+		var typewriter_edu = new Typewriter(document.getElementById('education'), {
+			loop: false,
+			cursor: '',
+			animateCursor: false,
+			typingSpeed: 'natural',
+			deleteSpeed: 30
+		});
+
+		var typewriter_cert = new Typewriter(document.getElementById('certificates'), {
+			loop: false,
+			cursor: '',
+			animateCursor: false,
+			typingSpeed: 'natural',
+			deleteSpeed: 30
+		});
+
+		var typewriter_comp = new Typewriter(document.getElementById('computer-skills'), {
+			loop: false,
+			cursor: '',
+			animateCursor: false,
+			typingSpeed: 'natural',
+			deleteSpeed: 30
+		});
+
+		var typewriter_other = new Typewriter(document.getElementById('other-info'), {
+			loop: false,
+			cursor: '',
+			animateCursor: false,
+			typingSpeed: 'natural',
+			deleteSpeed: 30
+		});
+
+		typewriter_pers.pauseFor(1000)
+			.typeString('ｋ')
+			.deleteAll()
+			.typeString('こｊ')
+			.deleteChars(1)
+			.typeString('じんｊｙ')
+			.deleteChars(2)
+			.typeString('じょうｈ')
+			.deleteChars(1)
+			.typeString('ほう')
+			.deleteAll()
+			.typeString('個人情報')
+			.start();
+
+		typewriter_xp.pauseFor(2000)
+			.typeString('ｓｙ')
+			.deleteAll()
+			.typeString('しょｋ')
+			.deleteChars(1)
+			.typeString('くｒ')
+			.deleteChars(1)
+			.typeString('れｋ')
+			.deleteChars(1)
+			.typeString('き')
+			.deleteAll()
+			.typeString('職歴')
+			.start();
+
+		typewriter_edu.pauseFor(3000)
+			.typeString('ｇ')
+			.deleteAll()
+			.typeString('がｋ')
+			.deleteChars(1)
+			.typeString('くｒ')
+			.deleteChars(1)
+			.typeString('れｋ')
+			.deleteChars(1)
+			.typeString('き')
+			.deleteAll()
+			.typeString('学歴')
+			.start();
+
+		typewriter_cert.pauseFor(4000)
+			.typeString('ｍ')
+			.deleteAll()
+			.typeString('めんｋｙ')
+			.deleteChars(2)
+			.typeString('きょ')
+			.deleteAll()
+			.typeString('免許・ｓ')
+			.deleteChars(1)
+			.typeString('しｋ')
+			.deleteChars(1)
+			.typeString('かｋ')
+			.deleteChars(1)
+			.typeString('く')
+			.deleteChars(3)
+			.typeString('資格')
+			.start();
+
+		typewriter_comp.pauseFor(5000)
+			.typeString('ｐ')
+			.deleteAll()
+			.typeString('パｓ')
+			.deleteChars(1)
+			.typeString('ソコｎ')
+			.deleteChars(1)
+			.typeString('ンｇ')
+			.deleteChars(1)
+			.typeString('ぎｎ')
+			.deleteChars(1)
+			.typeString('のう')
+			.deleteChars(3)
+			.typeString('技能')
+			.start();
+
+		typewriter_other.pauseFor(6000)
+			.typeString('ｓ')
+			.deleteAll()
+			.typeString('そｎ')
+			.deleteChars(1)
+			.typeString('のｈ')
+			.deleteChars(1)
+			.typeString('ほｋ')
+			.deleteChars(1)
+			.typeString('か')
+			.deleteChars(2)
+			.typeString('他ｎ')
+			.deleteChars(1)
+			.typeString('のｊｙ')
+			.deleteChars(2)
+			.typeString('じょうｈ')
+			.deleteChars(1)
+			.typeString('ほう')
+			.deleteChars(5)
+			.typeString('情報')
+			.start();
 	</script>
 </body>
 </html>
