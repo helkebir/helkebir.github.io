@@ -15,6 +15,7 @@
     <script src="../../js/jquery-3.2.1.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
 	<script src="../../js/typewriter.js"></script>
+	<script src="../../js/noframework.waypoints.min.js"></script>
     <style>
 		th.fwidth, td.fwidth {
 			width: 40%;
@@ -413,29 +414,61 @@
 			typingSpeed: 'natural'
 		});
 
-		typewriter_pers.pauseFor(1000)
-			.typeString('PERSONAL DETAILS')
-			.start();
+		typewriter_pers.pauseFor(500)
+			.typeString('PERSONAL DETAILS');
+		typewriter_xp.pauseFor(500)
+			.typeString('WORK EXPERIENCE');
+		typewriter_edu.pauseFor(500)
+			.typeString('EDUCATION');
+		typewriter_cert.pauseFor(500)
+			.typeString('CERTIFICATES & AWARDS');
+		typewriter_comp.pauseFor(500)
+			.typeString('COMPUTER SKILLS');
+		typewriter_other.pauseFor(500)
+			.typeString('OTHER INFORMATION');
 
-		typewriter_xp.pauseFor(2000)
-			.typeString('WORK EXPERIENCE')
-			.start();
-
-		typewriter_edu.pauseFor(3000)
-			.typeString('EDUCATION')
-			.start();
-
-		typewriter_cert.pauseFor(4000)
-			.typeString('CERTIFICATES & AWARDS')
-			.start();
-
-		typewriter_comp.pauseFor(5000)
-			.typeString('COMPUTER SKILLS')
-			.start();
-
-		typewriter_other.pauseFor(6000)
-			.typeString('OTHER INFORMATION')
-			.start();
+		var waypoint_pers = new Waypoint({
+			element: document.getElementById('personal-info'),
+			handler: function() {
+				typewriter_pers.start();
+			},
+			offset: '100%' 
+		})
+		var waypoint_xp = new Waypoint({
+			element: document.getElementById('experience'),
+			handler: function() {
+				typewriter_xp.start();
+			},
+			offset: '100%' 
+		})
+		var waypoint_edu = new Waypoint({
+			element: document.getElementById('education'),
+			handler: function() {
+				typewriter_edu.start();
+			},
+			offset: '100%' 
+		})
+		var waypoint_cert = new Waypoint({
+			element: document.getElementById('certificates'),
+			handler: function() {
+				typewriter_cert.start();
+			},
+			offset: '100%' 
+		})
+		var waypoint_comp = new Waypoint({
+			element: document.getElementById('computer-skills'),
+			handler: function() {
+				typewriter_comp.start();
+			},
+			offset: '100%' 
+		})
+		var waypoint_other = new Waypoint({
+			element: document.getElementById('other-info'),
+			handler: function() {
+				typewriter_other.start();
+			},
+			offset: '100%' 
+		})
 	</script>
 </body>
 </html>

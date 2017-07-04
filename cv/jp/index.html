@@ -15,6 +15,7 @@
     <script src="../../js/jquery-3.2.1.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
 	<script src="../../js/typewriter.js"></script>
+	<script src="../../js/noframework.waypoints.min.js"></script>
     <style>
 		th.fwidth, td.fwidth {
 			width: 35%;
@@ -419,7 +420,7 @@
 			deleteSpeed: 30
 		});
 
-		typewriter_pers.pauseFor(1000)
+		typewriter_pers.pauseFor(500)
 			.typeString('ｋ')
 			.deleteAll()
 			.typeString('こｊ')
@@ -432,8 +433,7 @@
 			.deleteAll()
 			.typeString('個人情報')
 			.start();
-
-		typewriter_xp.pauseFor(2000)
+		typewriter_xp.pauseFor(500)
 			.typeString('ｓｙ')
 			.deleteAll()
 			.typeString('しょｋ')
@@ -444,10 +444,8 @@
 			.deleteChars(1)
 			.typeString('き')
 			.deleteAll()
-			.typeString('職歴')
-			.start();
-
-		typewriter_edu.pauseFor(3000)
+			.typeString('職歴');
+		typewriter_edu.pauseFor(500)
 			.typeString('ｇ')
 			.deleteAll()
 			.typeString('がｋ')
@@ -458,10 +456,8 @@
 			.deleteChars(1)
 			.typeString('き')
 			.deleteAll()
-			.typeString('学歴')
-			.start();
-
-		typewriter_cert.pauseFor(4000)
+			.typeString('学歴');
+		typewriter_cert.pauseFor(500)
 			.typeString('ｍ')
 			.deleteAll()
 			.typeString('めんｋｙ')
@@ -476,10 +472,8 @@
 			.deleteChars(1)
 			.typeString('く')
 			.deleteChars(3)
-			.typeString('資格')
-			.start();
-
-		typewriter_comp.pauseFor(5000)
+			.typeString('資格');
+		typewriter_comp.pauseFor(500)
 			.typeString('ｐ')
 			.deleteAll()
 			.typeString('パｓ')
@@ -492,10 +486,8 @@
 			.deleteChars(1)
 			.typeString('のう')
 			.deleteChars(3)
-			.typeString('技能')
-			.start();
-
-		typewriter_other.pauseFor(6000)
+			.typeString('技能');
+		typewriter_other.pauseFor(500)
 			.typeString('ｓ')
 			.deleteAll()
 			.typeString('そｎ')
@@ -514,8 +506,50 @@
 			.deleteChars(1)
 			.typeString('ほう')
 			.deleteChars(5)
-			.typeString('情報')
-			.start();
+			.typeString('情報');
+
+		var waypoint_pers = new Waypoint({
+			element: document.getElementById('personal-info'),
+			handler: function() {
+				typewriter_pers.start();
+			},
+			offset: '100%' 
+		})
+		var waypoint_xp = new Waypoint({
+			element: document.getElementById('experience'),
+			handler: function() {
+				typewriter_xp.start();
+			},
+			offset: '100%' 
+		})
+		var waypoint_edu = new Waypoint({
+			element: document.getElementById('education'),
+			handler: function() {
+				typewriter_edu.start();
+			},
+			offset: '100%' 
+		})
+		var waypoint_cert = new Waypoint({
+			element: document.getElementById('certificates'),
+			handler: function() {
+				typewriter_cert.start();
+			},
+			offset: '100%' 
+		})
+		var waypoint_comp = new Waypoint({
+			element: document.getElementById('computer-skills'),
+			handler: function() {
+				typewriter_comp.start();
+			},
+			offset: '100%' 
+		})
+		var waypoint_other = new Waypoint({
+			element: document.getElementById('other-info'),
+			handler: function() {
+				typewriter_other.start();
+			},
+			offset: '100%' 
+		})
 	</script>
 </body>
 </html>
