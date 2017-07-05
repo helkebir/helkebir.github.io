@@ -12,6 +12,7 @@
 	<meta name="theme-color" content="#444444">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/animate.css">
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 </head>
@@ -25,9 +26,9 @@
 		<hr width="100%" class="start_lang" />
 		<br />
 		<div style="display:table;width:100%; padding-left: 27px;">
-		<a class="btn btn-default sharp" href="en/" unselectable="on" draggable="false">ENGLISH</a>&nbsp;
-		<a class="btn btn-default sharp" href="jp/" unselectable="on" draggable="false" class="text-center">日本語</a>&nbsp;
-		<a class="btn btn-default sharp" href="nl/" unselectable="on" draggable="false">NEDERLANDS</a>
+		<a class="btn btn-default sharp" href="en/" unselectable="on" draggable="false" id="EN">ENGLISH</a>&nbsp;
+		<a class="btn btn-default sharp" href="jp/" unselectable="on" draggable="false" class="text-center" id="JP">日本語</a>&nbsp;
+		<a class="btn btn-default sharp" href="nl/" unselectable="on" draggable="false" id="NL">NEDERLANDS</a>
 		</div>
     </div>
 
@@ -52,6 +53,34 @@
 		setTimeout(function(){
 			$('.start_lang').addClass('end_lang');
 		}, 275);
+
+		$.fn.extend({
+			animateCss: function (animationName) {
+				var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+				this.addClass('animated ' + animationName).one(animationEnd, function() {
+					$(this).removeClass('animated ' + animationName);
+				});
+			}
+		});
+
+		$.get("https://ipinfo.io", function(response) {
+			window.country = response.country;
+			if (window.country == 'NL') {
+				setInterval(function() {
+					$('#NL').animateCss('pulse');
+				}, 5000);
+			}
+			else if (window.country == 'JP') {
+				setInterval(function() {
+					$('#JP').animateCss('pulse');
+				}, 5000);
+			}
+			else {
+				setInterval(function() {
+					$('#EN').animateCss('pulse');
+				}, 5000);
+			}
+		}, "jsonp");
 	</script>
 </body>
 </html>
