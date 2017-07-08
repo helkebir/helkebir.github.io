@@ -516,12 +516,6 @@ a.sharp:hover:active {
 	height: auto;
 }
 
-.logo_center:hover {
-	-webkit-transform: scale(1.25);
-	    -ms-transform: scale(1.25);
-	        transform: scale(1.25);
-}
-
 .logo_center {
 	-webkit-transition-duration: 0.2s;
 	-o-transition-duration: 0.2s;
