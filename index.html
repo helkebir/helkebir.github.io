@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>	
+    <script src="js/bootstrap.min.js"></script>
     <style>
 		th.fwidth, td.fwidth {
 			width: 40%;
@@ -51,6 +52,13 @@
 		<a class="btn btn-default sharp" href="jp/" unselectable="on" draggable="false" class="text-center" id="JP">日本語</a>&nbsp;
 		<a class="btn btn-default sharp" href="nl/" unselectable="on" draggable="false" id="NL">NEDERLANDS</a>
 		</div>
+		<br />
+		<hr width="100%" class="start_social" />
+		<br />
+		<div style="display:table;width:100%;">
+		<a class="btn btn-default sharp" href="https://www.facebook.com/hamza.elkebir" unselectable="on" draggable="false"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;
+		<a class="btn btn-default sharp" href="https://linkedin.com/in/hamza-el-kebir" unselectable="on" draggable="false"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+		</div>
     </div>
 
     <!-- end page-code -->
@@ -75,6 +83,7 @@
 	<script>
 		setTimeout(function(){
 			$('.start_lang').addClass('end_lang');
+			$('.start_social').addClass('end_social');
 		}, 275);
 
 		$.fn.extend({

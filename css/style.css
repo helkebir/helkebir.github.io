@@ -51,6 +51,7 @@ kbd:hover {
 }
 
 body {
+	min-width: 350px;
 	padding-bottom: 60px;
 	font-family: 'Noto Sans', 'Noto Sans Japanese' !important;
 	scrollbar-base-color: #333333;
@@ -202,6 +203,49 @@ hr.end_lang {
 hr.end_lang:after {
 	font-family: 'Droid Sans Mono';
 	content: "LANGUAGE";
+	display: inline-block;
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.start_social {
+	-webkit-transition: width 5s ease; /* For Safari 3.1 to 6.0 */
+    -webkit-transition: width 5s  ease;
+    -o-transition: width 5s  ease;
+    transition: width 5s  ease;
+	width: 125px;
+	padding: 0;
+	border: none;
+	border-top: dotted 2.5pt transparent;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.start_social:after {
+	font-family: 'Droid Sans Mono';
+	content: "SOCIAL";
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.end_social {
+	width: 100%;
+	padding: 0;
+	border: none;
+	border-top: dotted 2.5pt;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.end_social:after {
+	font-family: 'Droid Sans Mono';
+	content: "SOCIAL";
 	display: inline-block;
 	position: relative;
 	top: -0.8em;
