@@ -65,7 +65,7 @@
 
 		$.get("https://ipinfo.io", function(response) {
 			window.country = response.country;
-			if (window.country == 'NL') {
+			if (window.country == 'NL' || window.country == 'BE') {
 				setInterval(function() {
 					$('#NL').animateCss('pulse');
 				}, 5000);
