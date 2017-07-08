@@ -676,6 +676,7 @@ div .vertical-jp {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	flex-basis: 1 1 auto;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: reverse;
 	    -ms-flex-direction: row-reverse;
@@ -692,8 +693,7 @@ div .vertical-jp {
 	-moz-text-orientation: upright;
 	-ms-text-orientation: upright;
 	text-orientation: upright;
-	font-size: 16pt !important;
-	min-height: 450px;
+	font-size: 12pt !important;
 }
 
 .stylized-title {
