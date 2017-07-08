@@ -376,137 +376,75 @@
 			loop: false,
 			cursor: '',
 			animateCursor: false,
-			typingSpeed: 'natural',
-			deleteSpeed: 30
+			typingSpeed: 'natural'
 		});
 
 		var typewriter_xp = new Typewriter(document.getElementById('experience'), {
 			loop: false,
 			cursor: '',
 			animateCursor: false,
-			typingSpeed: 'natural',
-			deleteSpeed: 30
+			typingSpeed: 'natural'
 		});
 
 		var typewriter_edu = new Typewriter(document.getElementById('education'), {
 			loop: false,
 			cursor: '',
 			animateCursor: false,
-			typingSpeed: 'natural',
-			deleteSpeed: 30
+			typingSpeed: 'natural'
 		});
 
 		var typewriter_cert = new Typewriter(document.getElementById('certificates'), {
 			loop: false,
 			cursor: '',
 			animateCursor: false,
-			typingSpeed: 'natural',
-			deleteSpeed: 30
+			typingSpeed: 'natural'
 		});
 
 		var typewriter_comp = new Typewriter(document.getElementById('computer-skills'), {
 			loop: false,
 			cursor: '',
 			animateCursor: false,
-			typingSpeed: 'natural',
-			deleteSpeed: 30
+			typingSpeed: 'natural'
 		});
 
 		var typewriter_other = new Typewriter(document.getElementById('other-info'), {
 			loop: false,
 			cursor: '',
 			animateCursor: false,
-			typingSpeed: 'natural',
-			deleteSpeed: 30
+			typingSpeed: 'natural'
 		});
 
 		typewriter_pers.pauseFor(500)
-			.typeString('ｋ')
-			.deleteAll()
-			.typeString('こｊ')
-			.deleteChars(1)
-			.typeString('じんｊｙ')
-			.deleteChars(2)
-			.typeString('じょうｈ')
-			.deleteChars(1)
-			.typeString('ほう')
+			.typeString('こじんじょうほう')
+			.pauseFor(200)
 			.deleteAll()
 			.typeString('個人情報')
 			.start();
 		typewriter_xp.pauseFor(500)
-			.typeString('ｓｙ')
-			.deleteAll()
-			.typeString('しょｋ')
-			.deleteChars(1)
-			.typeString('くｒ')
-			.deleteChars(1)
-			.typeString('れｋ')
-			.deleteChars(1)
-			.typeString('き')
+			.typeString('しょくれき')
+			.pauseFor(200)
 			.deleteAll()
 			.typeString('職歴');
 		typewriter_edu.pauseFor(500)
-			.typeString('ｇ')
-			.deleteAll()
-			.typeString('がｋ')
-			.deleteChars(1)
-			.typeString('くｒ')
-			.deleteChars(1)
-			.typeString('れｋ')
-			.deleteChars(1)
-			.typeString('き')
+			.typeString('がくれき')
+			.pauseFor(200)
 			.deleteAll()
 			.typeString('学歴');
 		typewriter_cert.pauseFor(500)
-			.typeString('ｍ')
+			.typeString('しかく')
+			.pauseFor(200)
 			.deleteAll()
-			.typeString('めんｋｙ')
-			.deleteChars(2)
-			.typeString('きょ')
-			.deleteAll()
-			.typeString('免許・ｓ')
-			.deleteChars(1)
-			.typeString('しｋ')
-			.deleteChars(1)
-			.typeString('かｋ')
-			.deleteChars(1)
-			.typeString('く')
-			.deleteChars(3)
 			.typeString('資格');
 		typewriter_comp.pauseFor(500)
-			.typeString('ｐ')
-			.deleteAll()
-			.typeString('パｓ')
-			.deleteChars(1)
-			.typeString('ソコｎ')
-			.deleteChars(1)
-			.typeString('ンｇ')
-			.deleteChars(1)
-			.typeString('ぎｎ')
-			.deleteChars(1)
-			.typeString('のう')
+			.typeString('パソコぎのう')
+			.pauseFor(200)
 			.deleteChars(3)
 			.typeString('技能');
 		typewriter_other.pauseFor(500)
-			.typeString('ｓ')
-			.deleteAll()
-			.typeString('そｎ')
-			.deleteChars(1)
-			.typeString('のｈ')
-			.deleteChars(1)
-			.typeString('ほｋ')
-			.deleteChars(1)
-			.typeString('か')
-			.deleteChars(2)
-			.typeString('他ｎ')
-			.deleteChars(1)
-			.typeString('のｊｙ')
-			.deleteChars(2)
-			.typeString('じょうｈ')
-			.deleteChars(1)
-			.typeString('ほう')
-			.deleteChars(5)
-			.typeString('情報');
+			.typeString('そのほかのじょうほう')
+			.pauseFor(200)
+			.deleteChars(8)
+			.typeString('他の情報');
 
 		var waypoint_pers = new Waypoint({
 			element: document.getElementById('personal-info'),
