@@ -254,6 +254,92 @@ hr.end_social:after {
 	background: white;
 }
 
+hr.start_sociaal {
+	-webkit-transition: width 5s ease; /* For Safari 3.1 to 6.0 */
+    -webkit-transition: width 5s  ease;
+    -o-transition: width 5s  ease;
+    transition: width 5s  ease;
+	width: 125px;
+	padding: 0;
+	border: none;
+	border-top: dotted 2.5pt transparent;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.start_sociaal:after {
+	font-family: 'Droid Sans Mono';
+	content: "SOCIAAL";
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.end_sociaal {
+	width: 100%;
+	padding: 0;
+	border: none;
+	border-top: dotted 2.5pt;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.end_sociaal:after {
+	font-family: 'Droid Sans Mono';
+	content: "SOCIAL";
+	display: inline-block;
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.start_sns {
+	-webkit-transition: width 5s ease; /* For Safari 3.1 to 6.0 */
+    -webkit-transition: width 5s  ease;
+    -o-transition: width 5s  ease;
+    transition: width 5s  ease;
+	width: 125px;
+	padding: 0;
+	border: none;
+	border-top: dotted 2.5pt transparent;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.start_sns:after {
+	font-family: 'Droid Sans Mono';
+	content: "SNS";
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
+hr.end_sns {
+	width: 100%;
+	padding: 0;
+	border: none;
+	border-top: dotted 2.5pt;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+hr.end_sns:after {
+	font-family: 'Droid Sans Mono';
+	content: "SNS";
+	display: inline-block;
+	position: relative;
+	top: -0.8em;
+	font-size: 1.5em;
+	padding: 0 0.35em;
+	background: white;
+}
+
 hr.start_jpconts {
 	-webkit-transition: width 5s ease; /* For Safari 3.1 to 6.0 */
     -webkit-transition: width 5s  ease;
