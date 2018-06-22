@@ -12,7 +12,6 @@
 	<meta name="theme-color" content="#444444">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -99,18 +98,6 @@
 					$(this).removeClass('animated ' + animationName);
 				});
 			}
-		});
-
-		var animations = ['bounceIn', 'jello', 'pulse', 'bounce', 'rubberBand', 'swing', 'tada', 'wobble'];
-
-		$('#logo_center').on("mouseenter", function () {
-			i = Math.round(Math.random() * 7);
-			$('#logo_center').animateCss(animations[i]);
-		});
-
-		$('#logo_center').on("touchstart", function () {
-			i = Math.round(Math.random() * 7);
-			$('#logo_center').animateCss(animations[i]);
 		});
 
 		$.get("https://ipinfo.io", function(response) {
