@@ -40,9 +40,9 @@ kbd {
 	font-family: 'Droid Sans Mono', 'Noto Sans Japanese', 'Noto Sans' !important;
 	background-color: #333333;
 	color: white;
-	-webkit-transition-duration: 0.2s;
-	-o-transition-duration: 0.2s;
-	   transition-duration: 0.2s;
+	-webkit-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	   transition-duration: 0.4s;
 }
 
 kbd:hover {
