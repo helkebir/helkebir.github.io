@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Hamza El-Kebir</title><link>https://hamza.el-kebir.info/</link><description>Recent content in Home on Hamza El-Kebir</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://hamza.el-kebir.info/index.xml" rel="self" type="application/rss+xml"/><item><title>Sixel Graphics</title><link>https://hamza.el-kebir.info/posts/sixel-graphics/</link><pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate><guid>https://hamza.el-kebir.info/posts/sixel-graphics/</guid><description>Reading time: 1 minutes and 7 seconds.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Hamza El-Kebir</title>
+    <link>https://hamza.el-kebir.info/</link>
+    <description>Recent content in Home on Hamza El-Kebir</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="https://hamza.el-kebir.info/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Curriculum Vitae (Legacy)</title>
+      <link>https://hamza.el-kebir.info/docs/cv/legacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hamza.el-kebir.info/docs/cv/legacy/</guid>
+      <description>Curriculum Vitae For information on my research activities, click here.
+Bio Aerospace engineering PhD candidate conducting research in robust safety-critical control of distributed parameter systems and systems facing adverse operating conditions.
+Academics University of Illinois at Urbana-Champaign &amp;mdash; PhD Student August 2020&amp;mdash; in Urbana-Champaign, IL Jointly supervised PhD program in Aerospace Engineering and Mechanical Science and Engineering, focusing on control theory and safe robotics, especially regarding safety-critical control of complex systems in adverse environments with limited prior knowledge, as well as robust adaptive control of infinite-dimensional system, with applications to autonomous robotic electrosurgery.</description>
+    </item>
+    <item>
+      <title>Sixel Graphics</title>
+      <link>https://hamza.el-kebir.info/posts/sixel-graphics/</link>
+      <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://hamza.el-kebir.info/posts/sixel-graphics/</guid>
+      <description>Reading time: 1 minutes and 6 seconds.
 What are Sixels? VT330/VT340 Programmer Reference Manual, Ch. 14 Sixel Graphics.
 Escape Character DCS (Device Control String): 0x90
 OR
@@ -7,8 +30,39 @@ Termination ST (String Terminator) 0x0
 OR
 ESC+\: 0x1B + 0x5C
 Control Functions LSB (least-significant bit) at the top.
-&amp;gt;&amp;gt;&amp;gt; 0x90 0x40 = 0x90 0b000001 ■ □ □ □ □ □ &amp;gt;&amp;gt;&amp;gt; 0x90 0x74 = 0x90 0b110100 ■ □ ■ □ ■ ■ &amp;gt;&amp;gt;&amp;gt; sixel2str = lambda i : &amp;#39;\n&amp;#39;.</description></item><item><title>Collisions with Signed Distance Functions</title><link>https://hamza.el-kebir.info/posts/signed-distance-functions-collision/</link><pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate><guid>https://hamza.el-kebir.info/posts/signed-distance-functions-collision/</guid><description>Reading time: 0 minutes and 1 second.
-Introduction</description></item><item><title>On Signed Distance Functions</title><link>https://hamza.el-kebir.info/posts/signed-distance-functions/</link><pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate><guid>https://hamza.el-kebir.info/posts/signed-distance-functions/</guid><description>Reading time: 12 minutes and 41 seconds.
+&amp;gt;&amp;gt;&amp;gt; 0x90 0x40 = 0x90 0b000001 ■ □ □ □ □ □ &amp;gt;&amp;gt;&amp;gt; 0x90 0x74 = 0x90 0b110100 ■ □ ■ □ ■ ■ &amp;gt;&amp;gt;&amp;gt; sixel2str = lambda i : &amp;#39;\n&amp;#39;.</description>
+    </item>
+    <item>
+      <title>Collisions with Signed Distance Functions</title>
+      <link>https://hamza.el-kebir.info/posts/signed-distance-functions-collision/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://hamza.el-kebir.info/posts/signed-distance-functions-collision/</guid>
+      <description>Reading time: 0 minutes and 1 second.
+Introduction </description>
+    </item>
+    <item>
+      <title>On Signed Distance Functions</title>
+      <link>https://hamza.el-kebir.info/posts/signed-distance-functions/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://hamza.el-kebir.info/posts/signed-distance-functions/</guid>
+      <description>Reading time: 16 minutes and 34 seconds.
 Introduction Formal Definition In more rigorous terms, signed distance functions (aka SDFs) are defined as functions that satisfy a particular form of the eikonal equation1. The general eikonal equation is of the form:
 $$||\nabla u(x)|| = \frac{1}{f(x)},\quad x \in \Omega,$$
-where \(\Omega\) is an open set in \(\mathbb{R}^n\), and \(f(x) : \mathbb{R}^n \to \mathbb{R}\) is a function with positive values. In physical terms, the solution \(u(x)\) to this nonlinear partial differential equation can be interpreted as the shortest time needed to travel from the boundary \(\partial\Omega\) to \(x \in \Omega\), with \(f(x)\) being the speed at \(x\).</description></item><item><title/><link>https://hamza.el-kebir.info/docs/gincy/StateSpace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hamza.el-kebir.info/docs/gincy/StateSpace/</guid><description>Introduction to State Space $$ \mathbf{\Sigma}_{\mathrm{CTLTI}} = \begin{cases} \dot{\mathbf{x}}(t) &amp;= \mathbf{A} \mathbf{x}(t) + \mathbf{B} \mathbf{u}(t) \\ \mathbf{y}(t) &amp;= \mathbf{C} \mathbf{x}(t) + \mathbf{D} \mathbf{u}(t) \end{cases} $$ $$ \mathbf{\Sigma}_{\mathrm{DTLTI}} = \begin{cases} \mathbf{x}(k+1) &amp;= \mathbf{\Phi} \mathbf{x}(k) + \mathbf{\Gamma} \mathbf{u}(k) \\ \mathbf{y}(k) &amp;= \mathbf{C} \mathbf{x}(k) + \mathbf{D} \mathbf{u}(k) \end{cases} $$ graph LR Guidance -- Navigation Navigation -- Control Control -- Guidance Navigation -- Guidance Fig. 1: Basic flowdown of GN&amp;C</description></item><item><title/><link>https://hamza.el-kebir.info/posts/3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hamza.el-kebir.info/posts/3/</guid><description>3</description></item></channel></rss>
+where \(\Omega\) is an open set in \(\mathbb{R}^n\), and \(f(x) : \mathbb{R}^n \to \mathbb{R}\) is a function with positive values. In physical terms, the solution \(u(x)\) to this nonlinear partial differential equation can be interpreted as the shortest time needed to travel from the boundary \(\partial\Omega\) to \(x \in \Omega\), with \(f(x)\) being the speed at \(x\).</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://hamza.el-kebir.info/docs/gincy/StateSpace/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hamza.el-kebir.info/docs/gincy/StateSpace/</guid>
+      <description>Introduction to State Space $$ \mathbf{\Sigma}_{\mathrm{CTLTI}} = \begin{cases} \dot{\mathbf{x}}(t) &amp;= \mathbf{A} \mathbf{x}(t) + \mathbf{B} \mathbf{u}(t) \\ \mathbf{y}(t) &amp;= \mathbf{C} \mathbf{x}(t) + \mathbf{D} \mathbf{u}(t) \end{cases} $$ $$ \mathbf{\Sigma}_{\mathrm{DTLTI}} = \begin{cases} \mathbf{x}(k+1) &amp;= \mathbf{\Phi} \mathbf{x}(k) + \mathbf{\Gamma} \mathbf{u}(k) \\ \mathbf{y}(k) &amp;= \mathbf{C} \mathbf{x}(k) + \mathbf{D} \mathbf{u}(k) \end{cases} $$ graph LR Guidance --&gt; Navigation Navigation --&gt; Control Control --&gt; Guidance Navigation --&gt; Guidance Fig. 1: Basic flowdown of GN&amp;C </description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://hamza.el-kebir.info/posts/3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hamza.el-kebir.info/posts/3/</guid>
+      <description>3 </description>
+    </item>
+  </channel>
+</rss>

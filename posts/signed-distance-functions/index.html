@@ -1,156 +1,342 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="On Signed Distance Functions"><meta property="og:title" content="On Signed Distance Functions"><meta property="og:description" content="Reading time: 12 minutes and 41 seconds.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="On Signed Distance Functions"><meta property="og:title" content="On Signed Distance Functions" />
+<meta property="og:description" content="Reading time: 16 minutes and 34 seconds.
 Introduction Formal Definition In more rigorous terms, signed distance functions (aka SDFs) are defined as functions that satisfy a particular form of the eikonal equation1. The general eikonal equation is of the form:
 $$||\nabla u(x)|| = \frac{1}{f(x)},\quad x \in \Omega,$$
-where \(\Omega\) is an open set in \(\mathbb{R}^n\), and \(f(x) : \mathbb{R}^n \to \mathbb{R}\) is a function with positive values. In physical terms, the solution \(u(x)\) to this nonlinear partial differential equation can be interpreted as the shortest time needed to travel from the boundary \(\partial\Omega\) to \(x \in \Omega\), with \(f(x)\) being the speed at \(x\)."><meta property="og:type" content="article"><meta property="og:url" content="https://hamza.el-kebir.info/posts/signed-distance-functions/"><meta property="article:published_time" content="2020-08-11T00:00:00+00:00"><meta property="article:modified_time" content="2020-08-11T00:00:00+00:00"><title>On Signed Distance Functions | Hamza El-Kebir</title><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.3a57fe8cef5ef9513c91e42c8ede70b1ceffa54e64b01cba3e4ddb9fc458f2c8.css integrity="sha256-Olf+jO9e+VE8keQsjt5wsc7/pU5ksBy6Pk3bn8RY8sg="><script defer src=/en.search.min.3f07e2788e54d02a246f7ee32772e59df6ffc61bda1069e0cc9330cb2980bb9b.js integrity="sha256-PwfieI5U0Cokb37jJ3Llnfb/xhvaEGngzJMwyymAu5s="></script></head><body><input type=checkbox class=hidden id=menu-control><main class="flex container"><aside class="book-menu fixed"><nav><h2 class=book-brand><a href=https://hamza.el-kebir.info><img src=/logo.png alt=Logo><span>Hamza El-Kebir</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64><div class="book-search-spinner spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><p><a href=/docs/about/><strong>About Me</strong></a></p></li><li><p><a href=/docs/cv/><strong>Curriculum Vitae</strong></a></p></li><li><p><a href=/docs/projects/><strong>Projects</strong></a></p></li><li><p><a href=/docs/research/><strong>Research</strong></a><br></p></li><li><p><a href=/posts/><strong>Blog</strong></a></p></li></ul><blockquote></blockquote></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class="flex align-center justify-between book-header"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
-<strong>On Signed Distance Functions</strong></header><article class=markdown><h1><a href=/posts/signed-distance-functions/>On Signed Distance Functions</a></h1><div><h5>Aug 11, 2020</h5><a href=/tags/SDF/>SDF</a>, <a href=/tags/mathematics/>mathematics</a><br></div><p><p><em>Reading time:
-12 minutes
-and 41 seconds.</em></p><h2 id=introduction>Introduction</h2><h3 id=formal-definition>Formal Definition</h3><p>In more rigorous terms, signed distance functions (aka SDFs) are defined
+where \(\Omega\) is an open set in \(\mathbb{R}^n\), and \(f(x) : \mathbb{R}^n \to \mathbb{R}\) is a function with positive values. In physical terms, the solution \(u(x)\) to this nonlinear partial differential equation can be interpreted as the shortest time needed to travel from the boundary \(\partial\Omega\) to \(x \in \Omega\), with \(f(x)\) being the speed at \(x\)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hamza.el-kebir.info/posts/signed-distance-functions/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-08-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-08-11T00:00:00+00:00" />
+
+<title>On Signed Distance Functions | Hamza El-Kebir</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.69d64cac3478d78c3092ff7e8e19c4b448ddbfda474335bb72d74f7162930a30.css" integrity="sha256-adZMrDR414wwkv9&#43;jhnEtEjdv9pHQzW7ctdPcWKTCjA=">
+
+
+<script defer src="/en.search.min.2e2ced91eab618fd8187130fa7af701390fa8c660a198a01e152c9700687ebfd.js" integrity="sha256-Liztkeq2GP2BhxMPp69wE5D6jGYKGYoB4VLJcAaH6/0="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://hamza.el-kebir.info"><img src="/logo.png" alt="Logo" /><span>Hamza El-Kebir</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    <ul>
+<li>
+<p><a href="/docs/about/"><strong>About Me</strong></a></p>
+</li>
+<li>
+<p><a href="/docs/cv/"><strong>Curriculum Vitae</strong></a></p>
+</li>
+<li>
+<p><a href="/docs/projects/"><strong>Projects</strong></a></p>
+</li>
+<li>
+<p><a href="/docs/research/"><strong>Research</strong></a>
+<br /></p>
+</li>
+<li>
+<p><a href="/posts/"><strong>Blog</strong></a></p>
+</li>
+</ul>
+<!-- - [**Gincy <br> *On Guidance, Navigation & Control***](/docs/gincy/)
+   - [Introduction to State Space](/docs/gincy/StateSpace/) -->
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+  <strong>On Signed Distance Functions</strong>
+</header>
+
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/signed-distance-functions/">On Signed Distance Functions</a>
+  </h1>
+  
+
+<div>
+
+  <h5>Aug 11, 2020</h5>
+
+
+
+  
+
+  
+    <a href="/tags/SDF/">SDF</a>, <a href="/tags/mathematics/">mathematics</a>
+    <br />
+  
+
+
+</div>
+
+
+  <p><p><em>Reading time: 
+
+
+
+
+16 minutes
+ and 34 seconds.</em></p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="formal-definition">Formal Definition</h3>
+<p>In more rigorous terms, signed distance functions (aka SDFs) are defined
 as functions that satisfy a particular form of the
-<strong>eikonal equation</strong><sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. The general eikonal equation is of the form:</p><p>$$||\nabla u(x)|| = \frac{1}{f(x)},\quad x \in \Omega,$$</p><p>where \(\Omega\) is an open set in \(\mathbb{R}^n\), and
+<strong>eikonal equation</strong><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. The general eikonal equation is of the form:</p>
+<p>$$||\nabla u(x)|| = \frac{1}{f(x)},\quad x \in \Omega,$$</p>
+<p>where \(\Omega\) is an open set in \(\mathbb{R}^n\), and
 \(f(x) : \mathbb{R}^n \to \mathbb{R}\) is a function with positive
 values. In physical terms, the solution \(u(x)\) to this nonlinear
 partial differential equation can be interpreted as the shortest time
 needed to travel from the boundary
 \(\partial\Omega\) to \(x \in \Omega\), with \(f(x)\) being the
-speed at \(x\).</p><p>Now, for a signed distance function, the speed will be unity throughout
+speed at \(x\).</p>
+<p>Now, for a signed distance function, the speed will be unity throughout
 the domain, and \(x\) will not be constrained to lie in \(\Omega\).
 With \(f(x) \equiv 1\), the time to travel from the boundary
 \(\partial\Omega\) to any \(x \in \mathbb{R}^n\) will simply be
 equal to the shortest distance from \(x\) to \(\partial\Omega\). We
 may then obtain a signed distance function \(\textsf{sdf}(x)\),
-provided that the following conditions are satisfied:</p><ol><li>Eikonal equation: <a name=eqEE></a>$$\tag{EE} ||\nabla\textsf{sdf}(x)|| = 1,\quad x \in \mathbb{R}^3,$$</li><li>Zero distance at the boundary: <a name=eqBZ></a>$$\tag{BZ} \textsf{sdf}(x) = 0,\quad \forall \ x \in \partial\Omega,$$</li><li>Inward-facing normal at the boundary: <a name=eqIN></a>$$\tag{IN} \nabla\textsf{sdf}(x) = N(x),\quad \forall \ x \in \partial\Omega.$$</li></ol><p>If these conditions are satisfied, a function representing the shortest
+provided that the following conditions are satisfied:</p>
+<ol>
+<li>Eikonal equation: <a name="eqEE"></a>
+$$\tag{EE} ||\nabla\textsf{sdf}(x)|| = 1,\quad x \in \mathbb{R}^3,$$</li>
+<li>Zero distance at the boundary: <a name="eqBZ"></a>
+$$\tag{BZ} \textsf{sdf}(x) = 0,\quad \forall \ x \in \partial\Omega,$$</li>
+<li>Inward-facing normal at the boundary: <a name="eqIN"></a>
+$$\tag{IN} \nabla\textsf{sdf}(x) = N(x),\quad \forall \ x \in \partial\Omega.$$</li>
+</ol>
+<p>If these conditions are satisfied, a function representing the shortest
 Euclidean distance from \(x \in \mathbb{R}^n\) to a surface
 \(\partial\Omega \subset \Omega \subset \mathbb{R}^n\) is obtained.
 This distance is signed, meaning that when \(x \in \Omega\),
 \(\textsf{sdf}(x)\) is nonnegative (\(\geq 0\)), while for
 \(x \in \mathbb{R}^n \setminus \Omega\), \(\textsf{sdf}(x)\) it is
-negative (\(&lt; 0\)).</p><p>To prove that these conditions produce a distance field (disregarding
+negative (\(&lt; 0\)).</p>
+<p>To prove that these conditions produce a distance field (disregarding
 the sign for now), consider points \(x, y\) on a path of
 steepest-descent, that is a path along gradient \(\nabla \textsf{sdf}\). As
 established previously \(||\nabla \textsf{sdf}(x)|| = 1\)
-(condition (<a href=#eqEE>EE</a>)). The Euclidean distance between these two points will
+(condition (<a href="#eqEE">EE</a>)). The Euclidean distance between these two points will
 be at most equal to the length of the steepest-descent path, denoted
-here by \(\gamma\). We find that:</p><p><a name=eqG></a>$$
+here by \(\gamma\). We find that:</p>
+<p><a name="eqG"></a>
+$$
 \tag{G}
 ||x - y|| \leq |\gamma| = \left| \int_\gamma \nabla \textsf{sdf}(\xi)
 \cdot \mathrm{d}s \right| = |\textsf{sdf}(x) - \textsf{sdf}(y)|.
-$$</p><p>Then, considering a straight line path from \(x\) to \(y\), i.e.,
+$$</p>
+<p>Then, considering a straight line path from \(x\) to \(y\), i.e.,
 the shortest path between the two points, denoted here by \(\zeta\),
-we find the following bound:</p><p><a name=eqZ></a>$$
+we find the following bound:</p>
+<p><a name="eqZ"></a>
+$$
 \tag{Z}
 \begin{aligned}
-||x - y|| &= |\zeta| = \int_\zeta ||\nabla \textsf{sdf}(\xi)|| \ ||\mathrm{d}s|| \cr
-&\geq \left| \int_\zeta \nabla \textsf{sdf}(\xi) \cdot \mathrm{d}s \right|
+||x - y|| &amp;= |\zeta| = \int_\zeta ||\nabla \textsf{sdf}(\xi)|| \ ||\mathrm{d}s|| \cr
+&amp;\geq \left| \int_\zeta \nabla \textsf{sdf}(\xi) \cdot \mathrm{d}s \right|
 = |\textsf{sdf}(x) - \textsf{sdf}(y)|.
 \end{aligned}
-$$</p><p>The latter inequality is proven straightforwardly by application of the
-Cauchy&ndash;Schwartz inequality.</p><div class=book-expand><label><div class="book-expand-head flex justify-between"><span>Proof</span>
-<span>↕</span></div><input type=checkbox class=hidden><div class="book-expand-content markdown-inner"><p>Consider the Cauchy&ndash;Schwartz inequality as applied to two vectors
-\(u, v \in \mathbb{R}^n\):</p><p><a name=eqC--S></a>$$
+$$</p>
+<p>The latter inequality is proven straightforwardly by application of the
+Cauchy&ndash;Schwartz inequality.</p>
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Proof</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>Consider the Cauchy&ndash;Schwartz inequality as applied to two vectors
+\(u, v \in \mathbb{R}^n\):</p>
+<p><a name="eqC--S"></a>
+$$
 \tag{C&ndash;S}
 |u \cdot v| \leq ||u|| \ ||v||.
-$$</p><p>We found \(|\zeta|\) to be equal to
+$$</p>
+<p>We found \(|\zeta|\) to be equal to
 $$
 \int_\zeta ||\nabla \textsf{sdf}(\xi)|| \ ||\mathrm{d}s||.
-$$</p><p>Recalling the definition of the signed distance function, we have that
+$$</p>
+<p>Recalling the definition of the signed distance function, we have that
 \(|\nabla \textsf{sdf}(\xi)| = 1, \forall \ \xi \in \mathbb{R}^n \)
-(condition (<a href=#eqEE>EE</a>)). The following can then be shown by invoking
-(<a href=#eqC--S>C&ndash;S</a>):</p><p>$$
+(condition (<a href="#eqEE">EE</a>)). The following can then be shown by invoking
+(<a href="#eqC--S">C&ndash;S</a>):</p>
+<p>$$
 \begin{aligned}
-\int_\zeta ||\nabla \textsf{sdf}(\xi)|| \ ||\mathrm{d}s|| &= \int_\zeta ||1|| \ ||\mathrm{d}s|| \cr
-&\geq \left|\int_\zeta 1 \cdot \mathrm{d}s\right| = \left|\int_\zeta \nabla \textsf{sdf}(\xi) \cdot \mathrm{d}s\right| \cr
-&= |\textsf{sdf}(x) - \textsf{sdf}(y)|.
+\int_\zeta ||\nabla \textsf{sdf}(\xi)|| \ ||\mathrm{d}s|| &amp;= \int_\zeta ||1|| \ ||\mathrm{d}s|| \cr
+&amp;\geq \left|\int_\zeta 1 \cdot \mathrm{d}s\right| = \left|\int_\zeta \nabla \textsf{sdf}(\xi) \cdot \mathrm{d}s\right| \cr
+&amp;= |\textsf{sdf}(x) - \textsf{sdf}(y)|.
 \end{aligned}
-$$</p><p style=text-align:right;font-size:24pt>□</p></div></label></div><p>Combining inequalities (<a href=#eqG>G</a>) and (<a href=#eqZ>Z</a>), we find that the
-following must hold:</p><p>$$
+$$</p>
+<p style="text-align: right; font-size: 24pt">□</p>
+
+    </div>
+  </label>
+</div>
+
+<p>Combining inequalities (<a href="#eqG">G</a>) and (<a href="#eqZ">Z</a>), we find that the
+following must hold:</p>
+<p>$$
 ||x - y|| = |\textsf{sdf}(x) - \textsf{sdf}(y)|.
-$$</p><p>Finally, from the boundary conditions ((<a href=#eqBZ>BZ</a>) and (<a href=#eqIN>IN</a>)),
+$$</p>
+<p>Finally, from the boundary conditions ((<a href="#eqBZ">BZ</a>) and (<a href="#eqIN">IN</a>)),
 it is ensured that the function will in fact be a <em>signed</em> distance
-function for a given object \(\Omega\).</p><h3 id=differentiability>Differentiability</h3><p>Since for certain geometries, the derivative at a point where there
+function for a given object \(\Omega\).</p>
+<h3 id="differentiability">Differentiability</h3>
+<p>Since for certain geometries, the derivative at a point where there
 exist multiple minima (e.g., along the diagonal of a rectangle), is
 not defined. The points at which this is true are interesting in their
 own right; as a matter of fact, this set of points is known as the
-<em>medial axis</em>, or when this set is closed, the <em>cut locus</em>.</p><p>In the box below, an example of this phenomenon is given for a 2D square
-SDF.</p><div class=book-expand><label><div class="book-expand-head flex justify-between"><span>Differentiability Example: Square</span>
-<span>↕</span></div><input type=checkbox class=hidden><div class="book-expand-content markdown-inner"><p>Let us take one of the signed distance functions presented below to show
+<em>medial axis</em>, or when this set is closed, the <em>cut locus</em>.</p>
+<p>In the box below, an example of this phenomenon is given for a 2D square
+SDF.</p>
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Differentiability Example: Square</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>Let us take one of the signed distance functions presented below to show
 that these points do indeed exist. Take for example the
-<a href=#rectangle>rectangle</a> SDF, which can be written on one line as
+<a href="#rectangle">rectangle</a> SDF, which can be written on one line as
 follows:
 $$
 \begin{aligned}
-\textsf{sdf}(p, b) &= \sqrt{\max(|p_x|-b_x, 0)^2 + \max(|p_y|-b_y, 0)^2} \cr
-&+ \min(\max(|p_x|-b_x, |p_y|-b_y), 0).
+\textsf{sdf}(p, b) &amp;= \sqrt{\max(|p_x|-b_x, 0)^2 + \max(|p_y|-b_y, 0)^2} \cr
+&amp;+ \min(\max(|p_x|-b_x, |p_y|-b_y), 0).
 \end{aligned}
-$$</p><p>Taking the derivative w.r.t. \(x\), where we replaced the absolute
+$$</p>
+<p>Taking the derivative w.r.t. \(x\), where we replaced the absolute
 value by an equivalent expression
 (\(|x| = \sqrt{x^2}\) for \(x \in \mathbb{R}\)), we obtain:
 $$
 \begin{aligned}
-\frac{\partial \textsf{sdf}(x, y, w, h)}{\partial x} &=
+\frac{\partial \textsf{sdf}(x, y, w, h)}{\partial x} &amp;=
 \left(\begin{cases}
-\frac{x}{\sqrt{x^2}} & \text{if } \sqrt{x^2} &lt; w \text{ and } h + \sqrt{x^2} \geq w + \sqrt{y^2} \cr
-0 & \text{else}
+\frac{x}{\sqrt{x^2}} &amp; \text{if } \sqrt{x^2} &lt; w \text{ and } h + \sqrt{x^2} \geq w + \sqrt{y^2} \cr
+0 &amp; \text{else}
 \end{cases}\right) \cr
-&+
+&amp;+
 \frac{
 \max(0, -w + \sqrt{x^2})
 \left(\begin{cases}
-\frac{x}{\sqrt{x^2}} & \text{if } \sqrt{x^2} > w \cr
-0 & \text{else}
+\frac{x}{\sqrt{x^2}} &amp; \text{if } \sqrt{x^2} &gt; w \cr
+0 &amp; \text{else}
 \end{cases}\right)
 }{
 \sqrt{\max(0, -w + \sqrt{x^2})^2 + \max(0, -h + \sqrt{y^2})^2}
 },
 \end{aligned}
-$$</p><p>where \(p = [\begin{smallmatrix} x & y \end{smallmatrix}]^\intercal\)
-and \(b = [\begin{smallmatrix} w & h \end{smallmatrix}]^\intercal\).
+$$</p>
+<p>where \(p = [\begin{smallmatrix} x &amp; y \end{smallmatrix}]^\intercal\)
+and \(b = [\begin{smallmatrix} w &amp; h \end{smallmatrix}]^\intercal\).
 For ease of exposition, we will consider a particular rectangle, namely
 a square (\(w = h = l\)). After some simplification we find:
 $$
 \begin{aligned}
-\frac{\partial \textsf{sdf}(x, y, l)}{\partial x} &=
+\frac{\partial \textsf{sdf}(x, y, l)}{\partial x} &amp;=
 \left(\begin{cases}
-\frac{x}{\sqrt{x^2}} & \text{if } \sqrt{y^2} \leq \sqrt{x^2} &lt; l \cr
-0 & \text{else}
+\frac{x}{\sqrt{x^2}} &amp; \text{if } \sqrt{y^2} \leq \sqrt{x^2} &lt; l \cr
+0 &amp; \text{else}
 \end{cases}\right) \cr
-&+
+&amp;+
 \frac{
 \max(0, -l + \sqrt{x^2})
 \left(\begin{cases}
-\frac{x}{\sqrt{x^2}} & \text{if } \sqrt{x^2} > l \cr
-0 & \text{else}
+\frac{x}{\sqrt{x^2}} &amp; \text{if } \sqrt{x^2} &gt; l \cr
+0 &amp; \text{else}
 \end{cases}\right)
 }{
 \sqrt{\max(0, -l + \sqrt{x^2})^2 + \max(0, -l + \sqrt{y^2})^2}
 }.
 \end{aligned}
-$$</p><p>Now things start to become a little tricky. To able to make sense of all
+$$</p>
+<p>Now things start to become a little tricky. To able to make sense of all
 the \(\min\)s and \(\max\)es, we need to replace them with equivalent
 expressions in terms of Heaviside unit step functions
 (\(H(x)\)):
 $$
 H(x) \equiv
 \begin{cases}
-0 &\text{for } x &lt; 0 \cr
-1 &\text{for } x \geq 0
+0 &amp;\text{for } x &lt; 0 \cr
+1 &amp;\text{for } x \geq 0
 \end{cases}.
 $$
 It can readily be shown that:
 $$\begin{aligned}
-\max(a,b) &= H(a-b)a + [1-H(a-b)] b = H(a-b)a + H(b-a) b, \cr
-\min(a,b) &= H(b-a)a + [1-H(b-a)] b = H(b-a)a + H(a-b) b.
-\end{aligned}$$</p><p>We shall only consider the second term in the partial derivative, since
+\max(a,b) &amp;= H(a-b)a + [1-H(a-b)] b = H(a-b)a + H(b-a) b, \cr
+\min(a,b) &amp;= H(b-a)a + [1-H(b-a)] b = H(b-a)a + H(a-b) b.
+\end{aligned}$$</p>
+<p>We shall only consider the second term in the partial derivative, since
 the first term is known to have a limit to zero, and will therefore
 be determinate within our region of interest. Through substitution of
 the previous expressions, we obtain:
 $$\begin{aligned}
-D(x, y, l) &= \frac{D_n(x, l)}{D_d(x,y,l)} \cr
-&= \frac{
+D(x, y, l) &amp;= \frac{D_n(x, l)}{D_d(x,y,l)} \cr
+&amp;= \frac{
 x (-l + \sqrt{x^2}) H(-l + \sqrt{x^2})^2
 }{
 \sqrt{x^2}\sqrt{(l-\sqrt{x^2})^2 H(-l + \sqrt{x^2}) + (l-\sqrt{y^2})^2 H(-l+\sqrt{y^2})}
 }.
-\end{aligned}$$</p><p>For a square, if \(x=y\) and \(|x| &lt; l\), it is known that there are
+\end{aligned}$$</p>
+<p>For a square, if \(x=y\) and \(|x| &lt; l\), it is known that there are
 to edges that lie equally close to \((x,y)\). To prove this, we will
 use L&rsquo;Hôpital&rsquo;s rule to show that now derivative exists for \(x &lt; l\).
 Roughly speaking, L&rsquo;Hôpital&rsquo;s rule states that for a function of the
@@ -159,16 +345,19 @@ form \(f(x)/g(x)\), its limit for \(x \rightarrow c\) exists only if
 we will find:
 $$
 \lim_{x \rightarrow c} \frac{f(x)}{g(x)} = \lim_{x \rightarrow c} \frac{f^\prime(x)}{g^\prime(x)}.
-$$</p><p>Let us take \(f(x) \equiv D_n(x, l)\) and
+$$</p>
+<p>Let us take \(f(x) \equiv D_n(x, l)\) and
 \(g(x) \equiv D_d(x, x, l)\). Computing the derivatives, we obtain:
 $$\begin{aligned}
-f^\prime(x) &= 2 \sqrt{x^2} \left(\sqrt{x^2}-l\right) \delta \left(\sqrt{x^2}-l\right) H \left(\sqrt{x^2}-l\right) \cr
-&+\frac{\left(2 x^2-l \sqrt{x^2}\right) H \left(\sqrt{x^2}-l\right)^2}{\sqrt{x^2}},
-\end{aligned}$$</p><p>$$\begin{aligned}
-g^\prime(x) &= \frac{\sqrt{x^2} \left(\frac{x \left(l-\sqrt{x^2}\right)^2 \delta \left(\sqrt{x^2}-l\right)}{\sqrt{x^2}}+\frac{2 x \left(\sqrt{x^2}-l\right) H \left(\sqrt{x^2}-l\right)}{\sqrt{x^2}}\right)}{2 \sqrt{2}
+f^\prime(x) &amp;= 2 \sqrt{x^2} \left(\sqrt{x^2}-l\right) \delta \left(\sqrt{x^2}-l\right) H \left(\sqrt{x^2}-l\right) \cr
+&amp;+\frac{\left(2 x^2-l \sqrt{x^2}\right) H \left(\sqrt{x^2}-l\right)^2}{\sqrt{x^2}},
+\end{aligned}$$</p>
+<p>$$\begin{aligned}
+g^\prime(x) &amp;= \frac{\sqrt{x^2} \left(\frac{x \left(l-\sqrt{x^2}\right)^2 \delta \left(\sqrt{x^2}-l\right)}{\sqrt{x^2}}+\frac{2 x \left(\sqrt{x^2}-l\right) H \left(\sqrt{x^2}-l\right)}{\sqrt{x^2}}\right)}{2 \sqrt{2}
 \sqrt{\left(l-\sqrt{x^2}\right)^2 H \left(\sqrt{x^2}-l\right)}} \cr
-&+\frac{\sqrt{2} x \sqrt{\left(l-\sqrt{x^2}\right)^2 H \left(\sqrt{x^2}-l\right)}}{\sqrt{x^2}}.
-\end{aligned}$$</p><p>While \(f^\prime(x)\) appears to hold no singularities at first glance
+&amp;+\frac{\sqrt{2} x \sqrt{\left(l-\sqrt{x^2}\right)^2 H \left(\sqrt{x^2}-l\right)}}{\sqrt{x^2}}.
+\end{aligned}$$</p>
+<p>While \(f^\prime(x)\) appears to hold no singularities at first glance
 (other than the Dirac delta, which is not triggered since \(x &lt; l\)),
 \(g^\prime(x)\) does have a clear singularity. For its second term,
 it is clear that the Heaviside function in the denominator will always
@@ -176,256 +365,636 @@ be zero on the interior, giving cause to a singularity of the form
 \(1/\sqrt{0}\). With this, we have shown that on the interior
 diagonals, the derivative SDF of a square shape will indeed not exist.
 (Since the shape is symmetric in both axes, a derivation in \(y\) will
-yield the exact same result.)</p></div></label></div><h2 id=boolean-operations-combinations>Boolean Operations (Combinations)</h2><p>In order to create more complex shapes, it is reasonable to want to run
+yield the exact same result.)</p>
+
+    </div>
+  </label>
+</div>
+
+<h2 id="boolean-operations-combinations">Boolean Operations (Combinations)</h2>
+<p>In order to create more complex shapes, it is reasonable to want to run
 combination operatons on primitives. To get a better handle on what
-these operations might be, consider the following basic examples:</p><ul><li>Union</li><li>Difference</li><li>Intersection</li></ul><p>Below, we consider these, and other, operations on two shapes (sets)
+these operations might be, consider the following basic examples:</p>
+<ul>
+<li>Union</li>
+<li>Difference</li>
+<li>Intersection</li>
+</ul>
+<p>Below, we consider these, and other, operations on two shapes (sets)
 \(P\) and \(Q\), resulting in a set \(R\). The SDFs belonging to
 these sets will be subscripted by the name of the set to which they
-belong. For more information on this topic, see <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup><sup>, </sup><sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>.</p><h3 id=union>Union</h3><p>$$
+belong. For more information on this topic, see <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup><sup>, </sup><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<h3 id="union">Union</h3>
+<p>$$
 R = P \cup Q \Leftrightarrow \textsf{sdf}_R (p) = \min[\textsf{sdf}_P (p), \textsf{sdf}_Q (p)].
-$$</p><h3 id=intersection>Intersection</h3><p>$$
+$$</p>
+<h3 id="intersection">Intersection</h3>
+<p>$$
 R = P \cap Q \Leftrightarrow \textsf{sdf}_R (p) = \max[\textsf{sdf}_P (p), \textsf{sdf}_Q (p)].
-$$</p><blockquote class="book-hint warning"><strong>Note:</strong>
-This does not produce a proper SDF on the interior.</blockquote><h3 id=difference>Difference</h3><p>$$
+$$</p>
+<blockquote class="book-hint warning">
+  <strong>Note:</strong>
+This does not produce a proper SDF on the interior.
+</blockquote>
+
+<h3 id="difference">Difference</h3>
+<p>$$
 R = P \setminus Q \Leftrightarrow \textsf{sdf}_R (p) = \max[\textsf{sdf}_P (p), -\textsf{sdf}_Q (p)].
-$$</p><blockquote class="book-hint warning"><strong>Note:</strong>
-This does not produce a proper SDF on the interior.</blockquote><h3 id=symmetric-difference>Symmetric Difference</h3><p>Also known as the <em>disjunctive union</em>. Expressed in words, this is the
-union of the difference of the two sets.</p><p>$$
+$$</p>
+<blockquote class="book-hint warning">
+  <strong>Note:</strong>
+This does not produce a proper SDF on the interior.
+</blockquote>
+
+<h3 id="symmetric-difference">Symmetric Difference</h3>
+<p>Also known as the <em>disjunctive union</em>. Expressed in words, this is the
+union of the difference of the two sets.</p>
+<p>$$
 R = P \oplus Q = (P \setminus Q) \cup (Q \setminus P)
 $$
 $$\Leftrightarrow$$
 $$
 \textsf{sdf}_R (p) = \min\{\max[\textsf{sdf}_P (p), -\textsf{sdf}_Q (p)], \max[\textsf{sdf}_Q (p), -\textsf{sdf}_P (p)]\}.
-$$</p><blockquote class="book-hint warning"><strong>Note:</strong>
-This does not produce a proper SDF on the interior.</blockquote><h3 id=complement>Complement</h3><p>The complement of an SDF is simply its negative, since its interior then
-becomes its exterior.</p><p>$$
+$$</p>
+<blockquote class="book-hint warning">
+  <strong>Note:</strong>
+This does not produce a proper SDF on the interior.
+</blockquote>
+
+<h3 id="complement">Complement</h3>
+<p>The complement of an SDF is simply its negative, since its interior then
+becomes its exterior.</p>
+<p>$$
 R = P^\complement \Leftrightarrow \textsf{sdf}_R (p) = -\textsf{sdf}_P (p).
-$$</p><div class=book-expand><label><div class="book-expand-head flex justify-between"><span>This does not produce a proper SDF on the interior?</span>
-<span>↕</span></div><input type=checkbox class=hidden><div class="book-expand-content markdown-inner"><p>I bet you are puzzled as to <em>why</em> you won&rsquo;t get a proper SDF on using
+$$</p>
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>This does not produce a proper SDF on the interior?</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>I bet you are puzzled as to <em>why</em> you won&rsquo;t get a proper SDF on using
 some of the combination operators introduced above. Let&rsquo;s shed some
-light on this by considering an intersection operator:</p><p>$$
+light on this by considering an intersection operator:</p>
+<p>$$
 \textsf{sdf}_R (p) = \max[\textsf{sdf}_P (p), \textsf{sdf}_Q (p)].
-$$</p><p>Now, before we get to differentiate, let&rsquo;s try to get rid of that
+$$</p>
+<p>Now, before we get to differentiate, let&rsquo;s try to get rid of that
 \(\max\) function by introducing Heaviside unit step functions
-instead:</p><p>$$
+instead:</p>
+<p>$$
 \textsf{sdf}_R (p) = \textsf{sdf}_P (p) H(\textsf{sdf}_P (p) - \textsf{sdf}_Q (p)) + \textsf{sdf}_Q (p) [1 - H(\textsf{sdf}_P (p) - \textsf{sdf}_Q (p))].
-$$</p><p>Now, let&rsquo;s take the gradient of this to see if it satisfies the eikonal
-condition (cond. (<a href=#eqEE>EE</a>)):</p><p>$$
+$$</p>
+<p>Now, let&rsquo;s take the gradient of this to see if it satisfies the eikonal
+condition (cond. (<a href="#eqEE">EE</a>)):</p>
+<p>$$
 \begin{aligned}
-[\nabla \textsf{sdf}_R (p)]_i &= H_{P-Q} \partial_i \textsf{sdf}_P (p) + \delta_{P-Q} \textsf{sdf}_P (p) \partial_i \textsf{sdf}_{P-Q} (p) \cr
-&- \delta_{P-Q} \textsf{sdf}_Q (p) \partial_i \textsf{sdf}_{P-Q} (p) + (1 - H_{P-Q}) \partial_i \textsf{sdf}_Q (p),
+[\nabla \textsf{sdf}_R (p)]_i &amp;= H_{P-Q} \partial_i \textsf{sdf}_P (p) + \delta_{P-Q} \textsf{sdf}_P (p) \partial_i \textsf{sdf}_{P-Q} (p) \cr
+&amp;- \delta_{P-Q} \textsf{sdf}_Q (p) \partial_i \textsf{sdf}_{P-Q} (p) + (1 - H_{P-Q}) \partial_i \textsf{sdf}_Q (p),
 \end{aligned}
-$$</p><p>where we have introduced some compact but truthfully nasty shorthand:</p><ul><li>\(H_{P-Q} \equiv H(\textsf{sdf}_P (p) - \textsf{sdf}_Q (p))\),</li><li>\(\delta_{P-Q} \equiv \delta(\textsf{sdf}_P (p) - \textsf{sdf}_Q (p))\),</li><li>\(\textsf{sdf}_{P-Q}(p) \equiv \textsf{sdf}_P (p) - \textsf{sdf}_Q (p)\),</li><li>\(\partial_i \textsf{sdf}(p) \equiv \frac{\partial \textsf{sdf}(p)}{\partial p_i}\).</li></ul><p>Let&rsquo;s consider some point \(p\) where
+$$</p>
+<p>where we have introduced some compact but truthfully nasty shorthand:</p>
+<ul>
+<li>\(H_{P-Q} \equiv H(\textsf{sdf}_P (p) - \textsf{sdf}_Q (p))\),</li>
+<li>\(\delta_{P-Q} \equiv \delta(\textsf{sdf}_P (p) - \textsf{sdf}_Q (p))\),</li>
+<li>\(\textsf{sdf}_{P-Q}(p) \equiv \textsf{sdf}_P (p) - \textsf{sdf}_Q (p)\),</li>
+<li>\(\partial_i \textsf{sdf}(p) \equiv \frac{\partial \textsf{sdf}(p)}{\partial p_i}\).</li>
+</ul>
+<p>Let&rsquo;s consider some point \(p\) where
 \(\textsf{sdf}_P (p) \neq \textsf{sdf}_Q (p)\) (so as not to deal with
 the Dirac delta). We can can identify two cases: (1)
-\(\textsf{sdf}_{P-Q} (p) > 0\), and (2)
-\(\textsf{sdf}_{P-Q} (p) &lt; 0\). Let&rsquo;s look at the first case:</p><p>$$
+\(\textsf{sdf}_{P-Q} (p) &gt; 0\), and (2)
+\(\textsf{sdf}_{P-Q} (p) &lt; 0\). Let&rsquo;s look at the first case:</p>
+<p>$$
 [\nabla \textsf{sdf}_R (p)]_{i,1} = \partial_i \textsf{sdf}_P (p).
-$$</p><p>Hey, now that&rsquo;s cool: the gradient is exactly that of
+$$</p>
+<p>Hey, now that&rsquo;s cool: the gradient is exactly that of
 \(\textsf{sdf}_P\), therefore satisfying the eikonal condition. It
 does not take much reasoning to find out that the same holds for case
 (2), except this time the gradient will correspond to that of
-\(\textsf{sdf}_Q\). All things seem to point to a proper SDF &mldr; or is
-there a catch?</p><h3 id=the-catch>The catch</h3><p>There is indeed a catch; we have not considered the case where
-\(\textsf{sdf}_P (p) = \textsf{sdf}_Q (p)\). What we get is:</p><p>$$
+\(\textsf{sdf}_Q\). All things seem to point to a proper SDF &hellip; or is
+there a catch?</p>
+<h3 id="the-catch">The catch</h3>
+<p>There is indeed a catch; we have not considered the case where
+\(\textsf{sdf}_P (p) = \textsf{sdf}_Q (p)\). What we get is:</p>
+<p>$$
 \begin{aligned}
-[\nabla \textsf{sdf}_R (p)]_i &= \partial_i \textsf{sdf}_P (p) \cr
-&+ \delta_{P-Q} \partial_i \textsf{sdf}_{P-Q} (p) \left( \textsf{sdf}_P (p) - \textsf{sdf}_Q (p) \right),
+[\nabla \textsf{sdf}_R (p)]_i &amp;= \partial_i \textsf{sdf}_P (p) \cr
+&amp;+ \delta_{P-Q} \partial_i \textsf{sdf}_{P-Q} (p) \left( \textsf{sdf}_P (p) - \textsf{sdf}_Q (p) \right),
 \end{aligned}
-$$</p><p>where \(\delta_{P-Q} = \delta(0) = \infty\). Therefore, the norm of
+$$</p>
+<p>where \(\delta_{P-Q} = \delta(0) = \infty\). Therefore, the norm of
 the gradient of this function is indeterminate, let alone equal to 1.
 For this very reason, we cannot say that the resulting function (after
-intersection) is a &lsquo;real&rsquo; SDF.</p><h3 id=what-about-the-interior>What about the interior?</h3><p>All technicalities aside, it seems at first glance that there are no
+intersection) is a &lsquo;real&rsquo; SDF.</p>
+<h3 id="what-about-the-interior">What about the interior?</h3>
+<p>All technicalities aside, it seems at first glance that there are no
 problems with the distance itself. We haven&rsquo;t taken a look at the
 interior yet though. While on the interior, the eikonal condition is
 satisfied, something arguably more important is violated: the shortest
-distance is not given.</p><p>Let&rsquo;s do a little thought experiment: imagine two circles, with a
+distance is not given.</p>
+<p>Let&rsquo;s do a little thought experiment: imagine two circles, with a
 spacing between the centers. Now take the difference between the two
 shapes: since we are taking the \(\max\), the distance on the boundary
 will be given from the farthest circle, instead of the closest circle.
 Quite obviously, this is not the shortest distance, even though the
 sign matches. Now this will pose problems when raymarching on the
 interior, but a similar problem will not be encountered on the exterior,
-since the distance will monotonically decrease towards the center.</p></div></label></div><h2 id=transformations>Transformations</h2><h3 id=translation>Translation</h3><p>Consider a translation by distance \(t \in \mathbb{R}^3\). The
-translated SDF will be of the form:</p><p>$$
+since the distance will monotonically decrease towards the center.</p>
+
+    </div>
+  </label>
+</div>
+
+<h2 id="transformations">Transformations</h2>
+<h3 id="translation">Translation</h3>
+<p>Consider a translation by distance \(t \in \mathbb{R}^3\). The
+translated SDF will be of the form:</p>
+<p>$$
 \textsf{sdf}_R (p) = \textsf{sdf}_P (p - t).
-$$</p><h3 id=scaling>Scaling</h3><p>We distinguish uniform and nonuniform scaling. In the first case, the
+$$</p>
+<h3 id="scaling">Scaling</h3>
+<p>We distinguish uniform and nonuniform scaling. In the first case, the
 scaling factor is the same across all axes, while in the latter case
-different scaling factors may be used on different axes.</p><h4 id=uniform-scaling>Uniform Scaling</h4><p>For uniform scaling, consider a scaling factor \(s \in \mathbb{R}_+\),
+different scaling factors may be used on different axes.</p>
+<h4 id="uniform-scaling">Uniform Scaling</h4>
+<p>For uniform scaling, consider a scaling factor \(s \in \mathbb{R}_+\),
 i.e, the positive orthant of \(\mathbb{R}\). It can be shown that
-(see &lsquo;Derivations&rsquo; below):</p><p>$$
+(see &lsquo;Derivations&rsquo; below):</p>
+<p>$$
 \textsf{sdf}_R (p) = \textsf{sdf}_P (p/s) s .
-$$</p><div class=book-expand><label><div class="book-expand-head flex justify-between"><span>Example: Uniformly Scaled Sphere</span>
-<span>↕</span></div><input type=checkbox class=hidden><div class="book-expand-content markdown-inner"><p>Consider the SDF of a sphere with radius \(r\), centered at the
-origin:</p><p>$$
+$$</p>
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Example: Uniformly Scaled Sphere</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>Consider the SDF of a sphere with radius \(r\), centered at the
+origin:</p>
+<p>$$
 \textsf{sdf}(p) = ||p|| - r = \sqrt{p_x^2 + p_y^2 + p_z^2} - r.
-$$</p><p>Uniform scaling by a factor \(s \in \mathbb{R}_+\) would yield, as
-expected:</p><p>$$
+$$</p>
+<p>Uniform scaling by a factor \(s \in \mathbb{R}_+\) would yield, as
+expected:</p>
+<p>$$
 \begin{aligned}
-\textsf{sdf}_s (p) &= (||p/s|| - r) s \cr
-&= (\sqrt{p_x^2/s^2 + p_y^2/s^2 + p_z^2/s^2} - r) s \cr
-&= (\sqrt{p_x^2 + p_y^2 + p_z^2}/s - r) s \cr
-&= \sqrt{p_x^2 + p_y^2 + p_z^2} - r s = ||p|| - rs.
+\textsf{sdf}_s (p) &amp;= (||p/s|| - r) s \cr
+&amp;= (\sqrt{p_x^2/s^2 + p_y^2/s^2 + p_z^2/s^2} - r) s \cr
+&amp;= (\sqrt{p_x^2 + p_y^2 + p_z^2}/s - r) s \cr
+&amp;= \sqrt{p_x^2 + p_y^2 + p_z^2} - r s = ||p|| - rs.
 \end{aligned}
-$$</p><p>Here, we simply obtained the SDF of a sphere of radius
+$$</p>
+<p>Here, we simply obtained the SDF of a sphere of radius
 \(r^\prime = r s\), which is equivalent to scaling the original SDF by
 a factor of \(s\). Clearly, the SDF is proper and the distance is
 not compressed/dilated. But what about a nonuniform scaling factor
-\(s \in \mathbb{R}^3\)?</p><p>Taking the inverse of the transformation matrix \(S\), we find that
-when naively transforming \(p\) in the SDF we obtain:</p><p>$$
+\(s \in \mathbb{R}^3\)?</p>
+<p>Taking the inverse of the transformation matrix \(S\), we find that
+when naively transforming \(p\) in the SDF we obtain:</p>
+<p>$$
 \begin{aligned}
-\textsf{sdf}_S (p) &= ||p \oslash s|| - r \cr
-&= \sqrt{p_x^2/s_x^2 + p_y^2/s_y^2 + p_z^2/s_z^2} - r,
+\textsf{sdf}_S (p) &amp;= ||p \oslash s|| - r \cr
+&amp;= \sqrt{p_x^2/s_x^2 + p_y^2/s_y^2 + p_z^2/s_z^2} - r,
 \end{aligned}
-$$</p><p>where &lsquo;\(\oslash\)&rsquo; denotes componentwise division.</p><p>At first glance, there don&rsquo;t seem to be any problems with this. Note,
+$$</p>
+<p>where &lsquo;\(\oslash\)&rsquo; denotes componentwise division.</p>
+<p>At first glance, there don&rsquo;t seem to be any problems with this. Note,
 however, that the distances obtained in this way do not correspond to
 the true distances. To see if this indeed is the case, let&rsquo;s verify the
-eikonal equation condition (cond. (<a href=#eqEE>EE</a>)):</p><p>$$
+eikonal equation condition (cond. (<a href="#eqEE">EE</a>)):</p>
+<p>$$
 \begin{aligned}
-||\nabla \textsf{sdf}_s (p)|| &= ||\nabla (||p \oslash s|| - r)|| \cr
-&= ||\nabla (\sqrt{p_x^2/s_x^2 + p_y^2/s_y^2 + p_z^2/s_z^2} - r)|| \cr
-&= \left|\left|
+||\nabla \textsf{sdf}_s (p)|| &amp;= ||\nabla (||p \oslash s|| - r)|| \cr
+&amp;= ||\nabla (\sqrt{p_x^2/s_x^2 + p_y^2/s_y^2 + p_z^2/s_z^2} - r)|| \cr
+&amp;= \left|\left|
 \begin{bmatrix}
 \frac{p_x}{s_x^2} \cr
 \frac{p_y}{s_y^2} \cr
 \frac{p_z}{s_z^2}
 \end{bmatrix}/\sqrt{p_x^2/s_x^2 + p_y^2/s_y^2 + p_z^2/s_z^2}\right|\right| \cr
-&= \frac{\sqrt{p_x^2/s_x^4 + p_y^2/s_y^4 + p_z^2/s_z^4}}{\sqrt{p_x^2/s_x^2 + p_y^2/s_y^2 + p_z^2/s_z^2}} \cr
-&\stackrel{?}{\equiv} 1.
+&amp;= \frac{\sqrt{p_x^2/s_x^4 + p_y^2/s_y^4 + p_z^2/s_z^4}}{\sqrt{p_x^2/s_x^2 + p_y^2/s_y^2 + p_z^2/s_z^2}} \cr
+&amp;\stackrel{?}{\equiv} 1.
 \end{aligned}
-$$</p><p>It is straightforward to show, in this case, that this final assertion
+$$</p>
+<p>It is straightforward to show, in this case, that this final assertion
 will only be true when \(s_x = s_y = s_z = 1\). This trivially
 corresponds to uniform scaling with a scaling factor of 1, which
 constitutes no change from the original SDF. Let us now apply a
 correction factor \(c\) to the SDF, such that we obtain
 \(\textsf{sdf}_{s,c} \equiv \textsf{sdf} (p \oslash s) c\). Leaving out
 much of the derivation, which is much the same as what was shown
-previously, we have:</p><p>$$
+previously, we have:</p>
+<p>$$
 \begin{aligned}
-||\nabla \textsf{sdf}_{s,c} (p)|| &= ||\nabla (||p \oslash s|| - r) c|| \cr
-&= ||\nabla (\sqrt{p_x^2/s_x^2 + p_y^2/s_y^2 + p_z^2/s_z^2} - r) c|| \cr
-&= c \frac{\sqrt{p_x^2/s_x^4 + p_y^2/s_y^4 + p_z^2/s_z^4}}{\sqrt{p_x^2/s_x^2 + p_y^2/s_y^2 + p_z^2/s_z^2}} \cr
-&\stackrel{?}{\equiv} 1.
+||\nabla \textsf{sdf}_{s,c} (p)|| &amp;= ||\nabla (||p \oslash s|| - r) c|| \cr
+&amp;= ||\nabla (\sqrt{p_x^2/s_x^2 + p_y^2/s_y^2 + p_z^2/s_z^2} - r) c|| \cr
+&amp;= c \frac{\sqrt{p_x^2/s_x^4 + p_y^2/s_y^4 + p_z^2/s_z^4}}{\sqrt{p_x^2/s_x^2 + p_y^2/s_y^2 + p_z^2/s_z^2}} \cr
+&amp;\stackrel{?}{\equiv} 1.
 \end{aligned}
-$$</p><p>If we take \(s_x = s_y = s_z = s\) and \(c \equiv s\), we can show
-that:</p><p>$$
+$$</p>
+<p>If we take \(s_x = s_y = s_z = s\) and \(c \equiv s\), we can show
+that:</p>
+<p>$$
 \begin{aligned}
-||\nabla \textsf{sdf}_s (p)|| &= s \frac{\sqrt{p_x^2/s^4 + p_y^2/s^4 + p_z^2/s^4}}{\sqrt{p_x^2/s^2 + p_y^2/s^2 + p_z^2/s^2}} \cr
-&= s \frac{\sqrt{s^2}}{\sqrt{s^4}} = s \frac{s}{s^2} \cr
-&\equiv 1.
+||\nabla \textsf{sdf}_s (p)|| &amp;= s \frac{\sqrt{p_x^2/s^4 + p_y^2/s^4 + p_z^2/s^4}}{\sqrt{p_x^2/s^2 + p_y^2/s^2 + p_z^2/s^2}} \cr
+&amp;= s \frac{\sqrt{s^2}}{\sqrt{s^4}} = s \frac{s}{s^2} \cr
+&amp;\equiv 1.
 \end{aligned}
-$$</p><p>With this, we have shown how proper uniform scaling can be achieved on a
-sphere.</p></div></label></div><h4 id=nonuniform-scaling>Nonuniform Scaling</h4><p>As discussed in the &lsquo;<a href=#xpScalingDerivation>Derivation</a>&rsquo; box below, there is no straightforward
+$$</p>
+<p>With this, we have shown how proper uniform scaling can be achieved on a
+sphere.</p>
+
+    </div>
+  </label>
+</div>
+
+<h4 id="nonuniform-scaling">Nonuniform Scaling</h4>
+<p>As discussed in the &lsquo;<a href="#xpScalingDerivation">Derivation</a>&rsquo; box below, there is no straightforward
 solution to the nonuniform scaling problem that does not violate the
 eikonal equation condition. The next best &lsquo;solution&rsquo;, would be to
 obtain some sort of lower distance bound. This provides a
 straightforward approach to obtaining a lower bound to the scale
 surface, which will appear correctly when rendered, but does not have a
 proper SDF. More advantages are listed in the
-&lsquo;<a href=#xpScalingDerivation>Derivation</a>&rsquo; box below. For a similar
-discussion, see <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>.</p><p>Here, we consider a scaling factor \(s \in \mathbb{R}_+^3\). As a lower
-bound, we obtain:</p><p>$$
+&lsquo;<a href="#xpScalingDerivation">Derivation</a>&rsquo; box below. For a similar
+discussion, see <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
+<p>Here, we consider a scaling factor \(s \in \mathbb{R}_+^3\). As a lower
+bound, we obtain:</p>
+<p>$$
 \textsf{sdf}_{s,\text{min}} (p) = \textsf{sdf} (p \oslash s) s_\text{min},
-$$</p><p>where \(s_\text{min}\) is the smallest element of \(s\), and
-&lsquo;\(\oslash\)&rsquo; denotes componentwise division.</p><p><a name=xpScalingDerivation></a><div class=book-expand><label><div class="book-expand-head flex justify-between"><span>Derivation</span>
-<span>↕</span></div><input type=checkbox class=hidden><div class="book-expand-content markdown-inner"><p>To be able to perform nonuniform scaling, a first idea would
+$$</p>
+<p>where \(s_\text{min}\) is the smallest element of \(s\), and
+&lsquo;\(\oslash\)&rsquo; denotes componentwise division.</p>
+<p><a name="xpScalingDerivation"></a>
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Derivation</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>To be able to perform nonuniform scaling, a first idea would
 be to see if there is some function \(c(p)\) that would allow
 \(\textsf{sdf}_{s,c} (p) \equiv ||\nabla [\textsf{sdf}(p \oslash s) c(p)]||\)
-to satisfy the eikonal equation condition.</p><p>With this idea in mind, let&rsquo;s apply it to an arbitrary nonuniformly
-scaled SDF:</p><p>$$
+to satisfy the eikonal equation condition.</p>
+<p>With this idea in mind, let&rsquo;s apply it to an arbitrary nonuniformly
+scaled SDF:</p>
+<p>$$
 \begin{aligned}
-& ||\nabla \left[\textsf{sdf}(p \oslash s) c(p) \right]|| = \cr
-&\left[\left(\textsf{sdf}(p \oslash s) \frac{\partial c(p)}{\partial p_x} + \frac{c(p) \frac{\partial\textsf{sdf}(p \oslash s)}{\partial p_x}}{s_x}\right)^2\right. \cr
-&\left. + \left(\textsf{sdf}(p \oslash s) \frac{\partial c(p)}{\partial p_y} + \frac{c(p) \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_y}}{s_y}\right)^2\right. \cr
-&\left. + \left(\textsf{sdf}(p \oslash s) \frac{\partial c(p)}{\partial p_z} + \frac{c(p) \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_z}}{s_z}\right)^2\right]^{1/2}.
+&amp; ||\nabla \left[\textsf{sdf}(p \oslash s) c(p) \right]|| = \cr
+&amp;\left[\left(\textsf{sdf}(p \oslash s) \frac{\partial c(p)}{\partial p_x} + \frac{c(p) \frac{\partial\textsf{sdf}(p \oslash s)}{\partial p_x}}{s_x}\right)^2\right. \cr
+&amp;\left. + \left(\textsf{sdf}(p \oslash s) \frac{\partial c(p)}{\partial p_y} + \frac{c(p) \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_y}}{s_y}\right)^2\right. \cr
+&amp;\left. + \left(\textsf{sdf}(p \oslash s) \frac{\partial c(p)}{\partial p_z} + \frac{c(p) \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_z}}{s_z}\right)^2\right]^{1/2}.
 \end{aligned}
-$$</p><p>To satisfy the eikonal equation, our initial goal is to try to achieve
-the following:</p><p>$$
+$$</p>
+<p>To satisfy the eikonal equation, our initial goal is to try to achieve
+the following:</p>
+<p>$$
 \textsf{sdf}(p \oslash s) \frac{\partial c(p)}{\partial p_j} + \frac{c(p) \frac{\partial\textsf{sdf}(p \oslash s)}{\partial p_j}}{s_j} = \frac{\partial\textsf{sdf}(p \oslash s)}{\partial p_j}.
-$$</p><p>If this is achieved, we know for a fact that
-\(||\nabla \left[\textsf{sdf}(p \oslash s) c(p) \right]|| = ||\nabla \textsf{sdf}(p)|| \equiv 1 \).</p><h3 id=uniform-scaling>Uniform scaling</h3><p>For uniform scaling, as seen before, where \(s_i = s\), the conditions
-required to obtain this result are:</p><ol><li>Uniform scaling: \(s_x = s_y = s_z = s\),</li><li>A constant \(c\): \(\frac{\partial c(p)}{\partial p_j} \equiv 0\),</li><li>\(c \equiv s\) to obtain \((c/s) \frac{\partial\textsf{sdf}(p \oslash s)}{\partial p_j} = \frac{\partial\textsf{sdf}(p \oslash s)}{\partial p_j}\).</li></ol><h3 id=nonuniform-scaling>Nonuniform scaling</h3><p>Rewriting the equation given above, we obtain:</p><p>$$
+$$</p>
+<p>If this is achieved, we know for a fact that
+\(||\nabla \left[\textsf{sdf}(p \oslash s) c(p) \right]|| = ||\nabla \textsf{sdf}(p)|| \equiv 1 \).</p>
+<h3 id="uniform-scaling">Uniform scaling</h3>
+<p>For uniform scaling, as seen before, where \(s_i = s\), the conditions
+required to obtain this result are:</p>
+<ol>
+<li>Uniform scaling: \(s_x = s_y = s_z = s\),</li>
+<li>A constant \(c\): \(\frac{\partial c(p)}{\partial p_j} \equiv 0\),</li>
+<li>\(c \equiv s\) to obtain \((c/s) \frac{\partial\textsf{sdf}(p \oslash s)}{\partial p_j} = \frac{\partial\textsf{sdf}(p \oslash s)}{\partial p_j}\).</li>
+</ol>
+<h3 id="nonuniform-scaling">Nonuniform scaling</h3>
+<p>Rewriting the equation given above, we obtain:</p>
+<p>$$
 \textsf{sdf}(p \oslash s) \frac{\partial c(p)}{\partial p_j} + (c(p)/s_j - 1) \frac{\partial\textsf{sdf}(p \oslash s)}{\partial p_j} = 0.
-$$</p><p>This boils down to solving the following system of equations:</p><p>$$
+$$</p>
+<p>This boils down to solving the following system of equations:</p>
+<p>$$
 \begin{aligned}
-\frac{\partial c(p)}{\partial p_j} &= q_j(p) - \frac{q_j(p)}{s_j} c(p), \quad j=1\ldots3 \cr
-\text{where } q_j(p) &\equiv \textsf{sdf}(p \oslash s) \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_j}.
+\frac{\partial c(p)}{\partial p_j} &amp;= q_j(p) - \frac{q_j(p)}{s_j} c(p), \quad j=1\ldots3 \cr
+\text{where } q_j(p) &amp;\equiv \textsf{sdf}(p \oslash s) \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_j}.
 \end{aligned}
-$$</p><p>This time, we cannot get away with taking a constant \(c\), since this
+$$</p>
+<p>This time, we cannot get away with taking a constant \(c\), since this
 would not satisfy the differential equation for all \(j\). Even for
 some sort of discontinuous \(c\), this effect can&rsquo;t be achieved,
 since there is is no indication as to what condition \(j\) is being
-evaluated based only on \(p\).</p><h3 id=a-lower-bound-for-nonuniform-scaling>A lower bound for nonuniform scaling</h3><p>In practical situations, it is useful to at least have a lower bound of
+evaluated based only on \(p\).</p>
+<h3 id="a-lower-bound-for-nonuniform-scaling">A lower bound for nonuniform scaling</h3>
+<p>In practical situations, it is useful to at least have a lower bound of
 the SDF. Since the SDF is identically zero at the surface, and the sign
 is preserved even when scaling, only the interior and exterior distances
 will be smaller than they would actually be. This is a useful property
-in cases such as raymarching, where overshoot is not desirable.</p><p>Let&rsquo;s study if such a lower bound can actually be computed. The new
+in cases such as raymarching, where overshoot is not desirable.</p>
+<p>Let&rsquo;s study if such a lower bound can actually be computed. The new
 eikonal equation for an pseudo-SDF that performs nonuniform scaling but
-corrects using the smallest scaling factor, takes the form of:</p><p>$$
+corrects using the smallest scaling factor, takes the form of:</p>
+<p>$$
 \begin{aligned}
-& ||\nabla \left[\textsf{sdf}(p \oslash s) s_\text{min} \right]|| = \cr
-&\left[\left( \frac{s_\text{min} \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_x}}{s_x} \right)^2 \right. \cr
-&\left. + \left( \frac{s_\text{min} \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_y}}{s_y} \right)^2 \right. \cr
-&\left. + \left( \frac{s_\text{min} \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_z}}{s_z} \right)^2 \right]^{1/2},
+&amp; ||\nabla \left[\textsf{sdf}(p \oslash s) s_\text{min} \right]|| = \cr
+&amp;\left[\left( \frac{s_\text{min} \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_x}}{s_x} \right)^2 \right. \cr
+&amp;\left. + \left( \frac{s_\text{min} \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_y}}{s_y} \right)^2 \right. \cr
+&amp;\left. + \left( \frac{s_\text{min} \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_z}}{s_z} \right)^2 \right]^{1/2},
 \end{aligned}
-$$</p><p>where \(s_\text{min} \equiv \min(s)\).</p><p>Considering the indivual elements, it is clear that:</p><p>$$
+$$</p>
+<p>where \(s_\text{min} \equiv \min(s)\).</p>
+<p>Considering the indivual elements, it is clear that:</p>
+<p>$$
 \left( \frac{s_\text{min} \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_x}}{s_x} \right)^2 \leq \left( \frac{\partial \textsf{sdf}(p \oslash s)}{\partial p_x} \right)^2, \quad j = 1\ldots 3,
-$$</p><p>which follows from the fact that \(s_\text{min}/s_j \leq 1\). Therefore,
+$$</p>
+<p>which follows from the fact that \(s_\text{min}/s_j \leq 1\). Therefore,
 \(||\nabla \left[\textsf{sdf}(p \oslash s) s_\text{min} \right]|| \leq 1\),
 which means that the distance between points will be lower than the
-actual distance (see the discussion of the eikonal equation above).</p><p>With this, we can use the following equation as a lower-bound SDF-like
-function for nonuniform scaling:</p><p>$$
+actual distance (see the discussion of the eikonal equation above).</p>
+<p>With this, we can use the following equation as a lower-bound SDF-like
+function for nonuniform scaling:</p>
+<p>$$
 \textsf{sdf}_{s,\text{min}} (p) = \textsf{sdf} (p \oslash s) s_\text{min}.
-$$</p></div></label></div></p><h2 id=list-of-2d-functions>List of 2D Functions</h2><p>The following signed distance functions assume that the primitive is
+$$</p>
+
+    </div>
+  </label>
+</div>
+</p>
+<h2 id="list-of-2d-functions">List of 2D Functions</h2>
+<p>The following signed distance functions assume that the primitive is
 centered at the origin, unless stated otherwise. Most of these functions
 are adapted from Inigo Quilez&rsquo;s excellent
-<a href=https://www.iquilezles.org/www/articles/distfunctions2d/distfunctions2d.htm>2D SDF functions article</a>,
-while others are derived from other sources in the literature.</p><h3 id=point>Point</h3><p>$$
+<a href="https://www.iquilezles.org/www/articles/distfunctions2d/distfunctions2d.htm">2D SDF functions article</a>,
+while others are derived from other sources in the literature.</p>
+<h3 id="point">Point</h3>
+<p>$$
 \textsf{sdf}(p) = ||p|| = \sqrt{p_x^2 + p_y^2}.
-$$</p><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css integrity=sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js integrity=sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js integrity=sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI crossorigin=anonymous onload=renderMathInElement(document.body);></script><p class=katex>$$
-$$</p><h4 id=implementation>Implementation</h4><div class=book-tabs><input type=radio class=hidden name=tabs-point_impl id=tabs-point_impl-0 checked>
-<label for=tabs-point_impl-0>GLSL</label><div class="book-tabs-content markdown-inner"><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-glsl data-lang=glsl><span style=color:#66d9ef>float</span> point(<span style=color:#66d9ef>vec2</span> p)
-{
-    <span style=color:#66d9ef>return</span> length(p);
-}
-</code></pre></div></div><input type=radio class=hidden name=tabs-point_impl id=tabs-point_impl-1>
-<label for=tabs-point_impl-1>Haxe</label><div class="book-tabs-content markdown-inner"><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-haxe data-lang=haxe><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>inline</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>point</span>(p:Vec2):FFloat {
-    <span style=color:#66d9ef>return</span> p.length;
-}
-</code></pre></div></div></div><h3 id=circle>Circle</h3><p>A circle simply offsets the distance to a point by a radius \(r\), as follows:</p><p>$$
+$$</p>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+
+
+<p class="katex">
+  $$
+$$
+</p>
+
+
+<h4 id="implementation">Implementation</h4>
+
+
+
+
+<div class="book-tabs">
+
+  <input type="radio" class="hidden" name="tabs-point_impl" id="tabs-point_impl-0" checked="checked" />
+  <label for="tabs-point_impl-0">
+    GLSL
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> point(<span style="color:#66d9ef">vec2</span> p)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> length(p);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+  </div>
+
+  <input type="radio" class="hidden" name="tabs-point_impl" id="tabs-point_impl-1"  />
+  <label for="tabs-point_impl-1">
+    Haxe
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haxe" data-lang="haxe"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">point</span>(p:Vec2):FFloat {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> p.length;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+  </div>
+
+</div>
+
+<h3 id="circle">Circle</h3>
+<p>A circle simply offsets the distance to a point by a radius \(r\), as follows:</p>
+<p>$$
 \textsf{sdf}(p, r) = ||p|| - r = \sqrt{p_x^2 + p_y^2} - r.
-$$</p><h4 id=implementation-1>Implementation</h4><div class=book-tabs><input type=radio class=hidden name=tabs-circle_impl id=tabs-circle_impl-0 checked>
-<label for=tabs-circle_impl-0>GLSL</label><div class="book-tabs-content markdown-inner"><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-glsl data-lang=glsl><span style=color:#66d9ef>float</span> circle(<span style=color:#66d9ef>vec2</span> p, <span style=color:#66d9ef>float</span> r)
-{
-    <span style=color:#66d9ef>return</span> length(p) <span style=color:#f92672>-</span> r;
-}
-</code></pre></div></div><input type=radio class=hidden name=tabs-circle_impl id=tabs-circle_impl-1>
-<label for=tabs-circle_impl-1>Haxe</label><div class="book-tabs-content markdown-inner"><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-haxe data-lang=haxe><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>inline</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>circle</span>(p:Vec2, r:FFloat):FFloat {
-    <span style=color:#66d9ef>return</span> p.length <span style=color:#f92672>-</span> r;
-}
-</code></pre></div></div></div><h3 id=rectangle>Rectangle</h3><p>For a rectangle, consider a 2D vector \(d\) consisting of the width
+$$</p>
+<h4 id="implementation-1">Implementation</h4>
+
+
+
+
+<div class="book-tabs">
+
+  <input type="radio" class="hidden" name="tabs-circle_impl" id="tabs-circle_impl-0" checked="checked" />
+  <label for="tabs-circle_impl-0">
+    GLSL
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> circle(<span style="color:#66d9ef">vec2</span> p, <span style="color:#66d9ef">float</span> r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> length(p) <span style="color:#f92672">-</span> r;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+  </div>
+
+  <input type="radio" class="hidden" name="tabs-circle_impl" id="tabs-circle_impl-1"  />
+  <label for="tabs-circle_impl-1">
+    Haxe
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haxe" data-lang="haxe"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">circle</span>(p:Vec2, r:FFloat):FFloat {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> p.length <span style="color:#f92672">-</span> r;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+  </div>
+
+</div>
+
+<h3 id="rectangle">Rectangle</h3>
+<p>For a rectangle, consider a 2D vector \(d\) consisting of the width
 (in \(x\)-direction), and the height. Operators with the subscript \(i\)
 notation (e.g., \(\textrm{abs}_i\)) will act on a vector in a
-component-wise fashion (similar to Einstein&rsquo;s tensor notation); see <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>
-for more information.</p><p>$$\begin{aligned}
-d(b) &= \textrm{abs}_i(p)-b, \cr
-\textsf{sdf}(p, d(b)) &= ||\max_i(d, 0)|| + \min(\max(d_x, d_y), 0).
-\end{aligned}$$</p><h4 id=implementation-2>Implementation</h4><div class=book-tabs><input type=radio class=hidden name=tabs-rectangle_impl id=tabs-rectangle_impl-0 checked>
-<label for=tabs-rectangle_impl-0>GLSL</label><div class="book-tabs-content markdown-inner"><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-glsl data-lang=glsl><span style=color:#66d9ef>float</span> rectangle(<span style=color:#66d9ef>vec2</span> p, <span style=color:#66d9ef>vec2</span> b)
-{
-    <span style=color:#66d9ef>vec2</span> d <span style=color:#f92672>=</span> abs(p)<span style=color:#f92672>-</span>b;
-    <span style=color:#66d9ef>return</span> length(max(d,<span style=color:#ae81ff>0.0</span>)) <span style=color:#f92672>+</span> min(max(d.x,d.y),<span style=color:#ae81ff>0.0</span>);
-}
-</code></pre></div></div><input type=radio class=hidden name=tabs-rectangle_impl id=tabs-rectangle_impl-1>
-<label for=tabs-rectangle_impl-1>Haxe</label><div class="book-tabs-content markdown-inner"><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-haxe data-lang=haxe><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>rectangle</span>(p:Vec2, b:Vec2):FFloat {
-    final d <span style=color:#f92672>=</span> p.abs().sub(b);
-    <span style=color:#66d9ef>return</span> d.max(<span style=color:#ae81ff>0</span>).length <span style=color:#f92672>+</span> Math.min(Math.max(d.x, d.y), <span style=color:#ae81ff>0</span>);
-}
-</code></pre></div></div></div><h3 id=rounded-rectangle>Rounded Rectangle</h3><p>The rounded rectangle follows a similar construction method to the
+component-wise fashion (similar to Einstein&rsquo;s tensor notation); see <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>
+for more information.</p>
+<p>$$\begin{aligned}
+d(b) &amp;= \textrm{abs}_i(p)-b, \cr
+\textsf{sdf}(p, d(b)) &amp;= ||\max_i(d, 0)|| + \min(\max(d_x, d_y), 0).
+\end{aligned}$$</p>
+<h4 id="implementation-2">Implementation</h4>
+
+
+
+
+<div class="book-tabs">
+
+  <input type="radio" class="hidden" name="tabs-rectangle_impl" id="tabs-rectangle_impl-0" checked="checked" />
+  <label for="tabs-rectangle_impl-0">
+    GLSL
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> rectangle(<span style="color:#66d9ef">vec2</span> p, <span style="color:#66d9ef">vec2</span> b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">vec2</span> d <span style="color:#f92672">=</span> abs(p)<span style="color:#f92672">-</span>b;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> length(max(d,<span style="color:#ae81ff">0.0</span>)) <span style="color:#f92672">+</span> min(max(d.x,d.y),<span style="color:#ae81ff">0.0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+  </div>
+
+  <input type="radio" class="hidden" name="tabs-rectangle_impl" id="tabs-rectangle_impl-1"  />
+  <label for="tabs-rectangle_impl-1">
+    Haxe
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haxe" data-lang="haxe"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rectangle</span>(p:Vec2, b:Vec2):FFloat {
+</span></span><span style="display:flex;"><span>    final d <span style="color:#f92672">=</span> p.abs().sub(b);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> d.max(<span style="color:#ae81ff">0</span>).length <span style="color:#f92672">+</span> Math.min(Math.max(d.x, d.y), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+  </div>
+
+</div>
+
+<h3 id="rounded-rectangle">Rounded Rectangle</h3>
+<p>The rounded rectangle follows a similar construction method to the
 rectangle, although the individual corners are rounded independently,
 producing a different result compared to the rectangle with uniform
-rounding applied.</p><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p><a href=https://en.wikipedia.org/wiki/Eikonal_equation>Wikipedia. <em>Eikonal equation</em>.</a> <a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2 role=doc-endnote><p><a href=http://www.cs.tau.ac.il/~efif/presentations/ACS_05/efif/bops_final.pdf>Efi Fogel, Ron Wein, Baruch Zukerman, and Dan Halperin (2005). <em>Boolean Set-Operations on \(X\)-monotone Curve Bounded Point-Sets</em>.</a> <a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3 role=doc-endnote><p><a href=https://doc.cgal.org/latest/Boolean_set_operations_2/index.html>CGAL, <em>2D Regularized Boolean Set-Operations</em>.</a> <a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4 role=doc-endnote><p><a href=http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/#non-uniform-scaling-and-beyond>Jamie Wong (2016). <em>Ray Marching and Signed Distance Functions</em>.</a> <a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5 role=doc-endnote><p><a href=https://en.wikipedia.org/wiki/Pointwise#Componentwise_operations>Wikipedia. <em>Pointwise: Componentwise operations</em></a> <a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></p></article><div class="book-footer justify-between"><div class=book-languages><ul><li class=flex><img src=/svg/translate.svg class=book-icon alt=Languages>
-English</li></ul><ul class=book-languages-list><li class=active><a href=https://hamza.el-kebir.info/ class=flex><img src=/svg/translate.svg class=book-icon alt=Languages>
-English</a></li><li><a href=https://hamza.el-kebir.info/ja/ class=flex><img src=/svg/translate.svg class=book-icon alt=Languages>
-Japanese</a></li><li><a href=https://hamza.el-kebir.info/nl/ class=flex><img src=/svg/translate.svg class=book-icon alt=Languages>
-Dutch</a></li></ul></div></div></div><aside class="book-toc levels-3 fixed"><nav id=TableOfContents><ul><li><ul><li><a href=#introduction>Introduction</a><ul><li><a href=#formal-definition>Formal Definition</a></li><li><a href=#differentiability>Differentiability</a></li></ul></li><li><a href=#boolean-operations-combinations>Boolean Operations (Combinations)</a><ul><li><a href=#union>Union</a></li><li><a href=#intersection>Intersection</a></li><li><a href=#difference>Difference</a></li><li><a href=#symmetric-difference>Symmetric Difference</a></li><li><a href=#complement>Complement</a></li></ul></li><li><a href=#transformations>Transformations</a><ul><li><a href=#translation>Translation</a></li><li><a href=#scaling>Scaling</a></li></ul></li><li><a href=#list-of-2d-functions>List of 2D Functions</a><ul><li><a href=#point>Point</a></li><li><a href=#circle>Circle</a></li><li><a href=#rectangle>Rectangle</a></li><li><a href=#rounded-rectangle>Rounded Rectangle</a></li></ul></li></ul></li></ul></nav></aside></main></body></html>
+rounding applied.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://en.wikipedia.org/wiki/Eikonal_equation">Wikipedia. <em>Eikonal equation</em>.</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="http://www.cs.tau.ac.il/~efif/presentations/ACS_05/efif/bops_final.pdf">Efi Fogel, Ron Wein, Baruch Zukerman, and Dan Halperin (2005). <em>Boolean Set-Operations on \(X\)-monotone Curve Bounded Point-Sets</em>.</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://doc.cgal.org/latest/Boolean_set_operations_2/index.html">CGAL, <em>2D Regularized Boolean Set-Operations</em>.</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/#non-uniform-scaling-and-beyond">Jamie Wong (2016). <em>Ray Marching and Signed Distance Functions</em>.</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://en.wikipedia.org/wiki/Pointwise#Componentwise_operations">Wikipedia. <em>Pointwise: Componentwise operations</em></a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+  
+
+
+  
+
+  
+
+  
+
+
+
+<div class="book-languages">
+
+  <ul>
+    <li class="flex">
+      <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="https://hamza.el-kebir.info/" class="flex">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://hamza.el-kebir.info/ja/" class="flex">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Japanese
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://hamza.el-kebir.info/nl/" class="flex">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Dutch
+      </a>
+    </li>
+    
+  </ul>
+
+</div>
+
+  
+
+  
+
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a>
+          <ul>
+            <li><a href="#formal-definition">Formal Definition</a></li>
+            <li><a href="#differentiability">Differentiability</a></li>
+          </ul>
+        </li>
+        <li><a href="#boolean-operations-combinations">Boolean Operations (Combinations)</a>
+          <ul>
+            <li><a href="#union">Union</a></li>
+            <li><a href="#intersection">Intersection</a></li>
+            <li><a href="#difference">Difference</a></li>
+            <li><a href="#symmetric-difference">Symmetric Difference</a></li>
+            <li><a href="#complement">Complement</a></li>
+          </ul>
+        </li>
+        <li><a href="#transformations">Transformations</a>
+          <ul>
+            <li><a href="#translation">Translation</a></li>
+            <li><a href="#scaling">Scaling</a></li>
+          </ul>
+        </li>
+        <li><a href="#list-of-2d-functions">List of 2D Functions</a>
+          <ul>
+            <li><a href="#point">Point</a></li>
+            <li><a href="#circle">Circle</a></li>
+            <li><a href="#rectangle">Rectangle</a></li>
+            <li><a href="#rounded-rectangle">Rounded Rectangle</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -1,12 +1,460 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Projects"><meta property="og:title" content="Projects"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://hamza.el-kebir.info/docs/projects/"><title>Projects | Hamza El-Kebir</title><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.3a57fe8cef5ef9513c91e42c8ede70b1ceffa54e64b01cba3e4ddb9fc458f2c8.css integrity="sha256-Olf+jO9e+VE8keQsjt5wsc7/pU5ksBy6Pk3bn8RY8sg="><script defer src=/en.search.min.3f07e2788e54d02a246f7ee32772e59df6ffc61bda1069e0cc9330cb2980bb9b.js integrity="sha256-PwfieI5U0Cokb37jJ3Llnfb/xhvaEGngzJMwyymAu5s="></script><link rel=alternate type=application/rss+xml href=https://hamza.el-kebir.info/docs/projects/index.xml title="Hamza El-Kebir"></head><body><input type=checkbox class=hidden id=menu-control><main class="flex container"><aside class="book-menu fixed"><nav><h2 class=book-brand><a href=https://hamza.el-kebir.info><img src=/logo.png alt=Logo><span>Hamza El-Kebir</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64><div class="book-search-spinner spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><p><a href=/docs/about/><strong>About Me</strong></a></p></li><li><p><a href=/docs/cv/><strong>Curriculum Vitae</strong></a></p></li><li><p><a href=/docs/projects/ class=active><strong>Projects</strong></a></p></li><li><p><a href=/docs/research/><strong>Research</strong></a><br></p></li><li><p><a href=/posts/><strong>Blog</strong></a></p></li></ul><blockquote></blockquote></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class="flex align-center justify-between book-header"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
-<strong>Projects</strong></header><article class=markdown><h1 id=projects>Projects</h1><p><em>Reading time:
-2 minutes
-and 1 second</em></p><h2 id=current-projects>Current projects</h2><h3 id=lodestar>Lodestar</h3><blockquote><p><em><strong>C++ digital guidance, navigation and control framework</strong></em>
-<script defer src=/all.js></script><i class="fas fa-code-branch"></i></p></blockquote><p>Lodestar provides a user friendly platform-agnostic framework for real-time linear control of dynamic systems.</p><h4 id=overview>Overview</h4><ul><li><i class="fas fa-code"></i>  <strong>Language</strong>: C++11 / Python (bindings)</li><li><i class="fas fa-balance-scale"></i>  <strong>License</strong>: BSD-3</li><li><i class="fas fa-tasks"></i>   <strong>Status</strong>: In active development.</li><li><i class="fas fa-globe"></i>   <strong>Website</strong>: <a href=https://lodestarengine.org>https://lodestarengine.org</a> ; <a href=https://theory.ldstr.dev>https://theory.ldstr.dev</a> .</li></ul><p>The Lodestar framework consists of several templates that allow for control of linear discrete time systems. The following features are implemented:</p><ul><li><strong>Discrete-time linear time invariant systems modeling and control</strong>:<ul><li>Template-based object oriented framework for arbitrary finite dimensional linear systems</li><li>Linear Quadratic Regulation (LQR)</li><li>Linear Quadratic Estimation/Classical Kalman Filter (LQE/KF)</li></ul></li></ul><h4 id=planned-features>Planned features</h4><p>The following capabilities are planned for Lodestar in the near future:</p><ul><li>Continuous to discrete time zero-order hold conversion</li><li>Recursive algebraic Riccati equation (ARE) solver</li><li>Recursive Least Squares (RLS) system identification</li><li>Single-input single-output (SISO) Generalized Predictive Control (GPC)</li><li>Spatial value functions (SVF) based guidance and path planning <a href=#Mettler2010>[1]</a></li><li>Real-time plotting and performance evaluation (impulse, unit step repsonse, Bode/Nyquist plots) frontend</li><li><a href=https://developers.google.com/protocol-buffers>Google Protocol Buffers</a>-based message passing interface for real-time logging and command</li><li>I/O interface for common sensors (e.g., IMUs, barometers, time-of-flight sensors) and servos (e.g., solenoids, brushless DC motors).</li></ul><h4 id=links>Links</h4><ul><li>Lodestar is powered by:<ul><li>Eigen: <a href=http://eigen.tuxfamily.org/>http://eigen.tuxfamily.org/</a></li><li>neither: <a href=https://github.com/LoopPerfect/neither>https://github.com/LoopPerfect/neither</a></li></ul></li><li>Related projects:<ul><li>SLICOT (Subroutine Library in Systems and Control Theory): <a href=http://slicot.org/>http://slicot.org/</a></li><li>Control Toolbox: <a href=https://github.com/ethz-adrl/control-toolbox>https://github.com/ethz-adrl/control-toolbox</a></li></ul></li></ul><h4 id=references>References</h4><p><a id=Mettler2010></a>[1] Mettler, B., Dadkhah, N., and Kong, Z. “Agile Autonomous Guidance Using Spatial Value Functions.” <em>Control Engineering Practice</em>, Vol. 18, No. 7, 2010, pp. 773–788. doi:10.1016/j.conengprac.2010.02.013.</p><hr><h3 id=knifefish>Knifefish</h3><blockquote><p><em><strong>A light-weight framework for robotic electrosurgery</strong></em>
-<i class="fas fa-fish"></i></p></blockquote><p>Knifefish is a framework for real-time control and simulation of electrosurgical processes, allowing for sensor data processing and feedback control.</p><h4 id=overview-1>Overview</h4><ul><li><i class="fas fa-code"></i>  <strong>Language</strong>: C++11</li><li><i class="fas fa-balance-scale"></i>  <strong>License</strong>: <em>TBD</em></li><li><i class="fas fa-tasks"></i>   <strong>Status</strong>: In active development</li></ul><h2 id=pastshelved-projects>Past/shelved projects</h2><h3 id=stratagem3d>Stratagem3D</h3><blockquote><p><em><strong>A light-weight web-based game engine for 3D turn-based strategy games</strong></em>
-<i class="fas fa-chess-knight"></i></p></blockquote><h4 id=overview-2>Overview</h4><ul><li><i class="fas fa-code"></i>  <strong>Language</strong>: Haxe/Kha</li><li><i class="fas fa-balance-scale"></i>  <strong>License</strong>: <em>TBD</em></li><li><i class="fas fa-tasks"></i>   <strong>Status</strong>: Shelved</li></ul><hr><h3 id=extendible-orbit-system-3d-eos3d>Extendible Orbit System 3D (EOS3D)</h3><blockquote><p><em><strong>Lightweight orbital mechanics calculation and visualization suite based on matplotlib</strong></em>
-<i class="fas fa-globe-europe"></i></p></blockquote><h4 id=overview-3>Overview</h4><ul><li><i class="fas fa-code"></i>  <strong>Language</strong>: Python</li><li><i class="fas fa-balance-scale"></i>  <strong>License</strong>: MIT</li><li><i class="fas fa-tasks"></i>   <strong>Status</strong>: Suspended</li></ul><p>The eos3d library is a lightweight orbital mechanics calculation and visualization suite based on matplotlib. It includes orbit visualization, SPACETRACK Two-Line Element retrieval and current satellite position visualization, Solar System orbits and planetary position visualizations and real-time n-body simulations.</p><h4 id=documentation>Documentation</h4><p>The documentation of eos3d-mpl may be downloaded via the following link: <a href=https://github.com/EOS3D/eos3d-mpl/raw/master/docs/documentation.pdf>documentation</a>.</p></article><div class="book-footer justify-between"><div class=book-languages><ul><li class=flex><img src=/svg/translate.svg class=book-icon alt=Languages>
-English</li></ul><ul class=book-languages-list><li class=active><a href=https://hamza.el-kebir.info/ class=flex><img src=/svg/translate.svg class=book-icon alt=Languages>
-English</a></li><li><a href=https://hamza.el-kebir.info/ja/docs/projects/ class=flex><img src=/svg/translate.svg class=book-icon alt=Languages>
-Japanese</a></li><li><a href=https://hamza.el-kebir.info/nl/docs/projects/ class=flex><img src=/svg/translate.svg class=book-icon alt=Languages>
-Dutch</a></li></ul></div></div></div><aside class="book-toc levels-2 fixed"><nav id=TableOfContents><ul><li><a href=#projects>Projects</a><ul><li><a href=#current-projects>Current projects</a><ul><li><a href=#lodestar>Lodestar</a></li><li><a href=#knifefish>Knifefish</a></li></ul></li><li><a href=#pastshelved-projects>Past/shelved projects</a><ul><li><a href=#stratagem3d>Stratagem3D</a></li><li><a href=#extendible-orbit-system-3d-eos3d>Extendible Orbit System 3D (EOS3D)</a></li></ul></li></ul></li></ul></nav></aside></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Projects"><meta property="og:title" content="Projects" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hamza.el-kebir.info/docs/projects/" />
+
+<title>Projects | Hamza El-Kebir</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.69d64cac3478d78c3092ff7e8e19c4b448ddbfda474335bb72d74f7162930a30.css" integrity="sha256-adZMrDR414wwkv9&#43;jhnEtEjdv9pHQzW7ctdPcWKTCjA=">
+
+
+<script defer src="/en.search.min.2e2ced91eab618fd8187130fa7af701390fa8c660a198a01e152c9700687ebfd.js" integrity="sha256-Liztkeq2GP2BhxMPp69wE5D6jGYKGYoB4VLJcAaH6/0="></script>
+
+<link rel="alternate" type="application/rss+xml" href="https://hamza.el-kebir.info/docs/projects/index.xml" title="Hamza El-Kebir" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://hamza.el-kebir.info"><img src="/logo.png" alt="Logo" /><span>Hamza El-Kebir</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    <ul>
+<li>
+<p><a href="/docs/about/"><strong>About Me</strong></a></p>
+</li>
+<li>
+<p><a href="/docs/cv/"><strong>Curriculum Vitae</strong></a></p>
+</li>
+<li>
+<p><a href="/docs/projects/"class=active><strong>Projects</strong></a></p>
+</li>
+<li>
+<p><a href="/docs/research/"><strong>Research</strong></a>
+<br /></p>
+</li>
+<li>
+<p><a href="/posts/"><strong>Blog</strong></a></p>
+</li>
+</ul>
+<!-- - [**Gincy <br> *On Guidance, Navigation & Control***](/docs/gincy/)
+   - [Introduction to State Space](/docs/gincy/StateSpace/) -->
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+  <strong>Projects</strong>
+</header>
+
+      
+<article class="markdown"><h1 id="projects">Projects</h1>
+<p><em>Reading time: 
+
+
+
+
+6 minutes
+ and 24 seconds</em></p>
+<h2 id="current-projects">Current projects</h2>
+<h3 id="margindx">MarginDx</h3>
+<blockquote>
+<p><em><strong>Real-time intraoperative assessment of cancer margins using advanced optical imaging and robotics techniques.</strong></em> 
+
+  
+  <script defer src="/all.js"></script>
+
+<i class="fas  fa-file-medical-alt "></i></p>
+</blockquote>
+<h4 id="overview">Overview</h4>
+<p><a href="https://healthinstitute.illinois.edu/connect/news/an-up-to-33-million-arpa-h-award-to-bring-a-new-standard-of-care-for-precision-in-surgical-interventions">Margin Diagnostics (MarginDx)</a>, funded through the Advanced Research Funding Agency for Health (ARPA-H) <a href="https://arpa-h.gov/news-and-events/arpa-h-announces-awards-develop-novel-technologies-precise-tumor-removal">Precision Surgical Interventions (PSI) program</a>, combines optical imaging technologies with AI screening tools to ensure, in real time, that tumor tissue and cells are completely removed during surgery.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/gv7WYpHVIfw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h4 id="individual-research-contributions">Individual Research Contributions</h4>
+<p>As the robo-optics lead, I am responsible for developing fundamental techniques and hardware required to bridge the gap between control theory and robotics, and biophotonics in <em>in vivo</em> imaging to operate under the effects of tissue deformation and motion. The project aims to develop a state-of-the-art device for high-resolution intraoperative optical imaging to enable cell-level identification of cancer margins and other forms of pathology, by leveraging nonlinear optical techniques and optical coherence tomography, coupled by adaptive precision robotic position and control. As part of my role, I have made the following contributions to the project:</p>
+<figure class="center">
+<img src="/images/MarginDx_system_fig.jpg" style="max-width: 50%" class="center" alt="Overview of the handheld and robotic components of the MarginDx system.">
+<figcaption>
+<small>
+Overview of the handheld and robotic components of the MarginDx system. I am responsible for the co-registration of images and pose between the handheld and robotic data, as well as for the complete robotic position and microscopic scanning hardware and software.
+</small>
+</figure>
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Spatiotemporal Distortion Mitigation for Low-Rate Single-Pixel Imaging in Fast Dynamic Large-Area Microscopy</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <ul>
+<li>Developed novel approaches to mitigate temporal aliasing and motion-induced distortions in single-pixel and line-scan-based confocal imaging systems, addressing extreme scale separations between pixel dwell time and scanning motion speed.</li>
+<li>Enabled high-resolution, large-area imaging of unstructured surfaces, facilitating the translation of confocal microscopy techniques (e.g., OCT, fluorescence imaging, nonlinear optics) to applications such as intraoperative diagnosis, material testing, and portable biological sensors.</li>
+<li>Leveraged control theory to model scan mirror and exogenous motion uncertainties, enabling maximum likelihood reconstruction of anti-aliased images under spatiotemporal aliasing scenarios.</li>
+<li>Introduced high-resolution pose estimation for handheld imaging probes using electromagnetic tracking systems with multiple distributed sensors.</li>
+<li>Pioneered a real-time GPU-accelerated framework for low-rate, high-resolution imaging in dynamic settings with motion uncertainty, marking a first in the field.</li>
+</ul>
+
+    </div>
+  </label>
+</div>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Soft Body Deformation Compensation and Reconstruction using Intrinsic Elastography through Contact-Based Imaging</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <ul>
+<li>Developed a novel framework to compensate for soft tissue deformation during contact-based imaging, enabling accurate intraoperative microscopic diagnosis by preserving spatial fidelity under mechanical loading.</li>
+<li>Introduced intrinsic elastography techniques to estimate tissue elasticity in real-time, leveraging the imaging probe&rsquo;s contact force, optical coherence tomography imaging features, and deformation dynamics inferred through dynamic loading to reconstruct undistorted tissue morphology.</li>
+<li>Designed algorithms to model and correct for nonlinear tissue responses, ensuring robust reconstruction of microscopic features in the presence of varying contact pressures and probe orientations.</li>
+<li>Integrated electromagnetic tracking systems with multi-sensor 6-DOF pose estimation to monitor probe-tissue interactions, providing real-time feedback for deformation compensation and elastographic mapping.</li>
+<li>Demonstrated the application of this approach in intraoperative settings, enabling high-resolution imaging of soft tissues (e.g., breast, liver, and skin) for precise pathological assessment and surgical guidance, in addition to enabling mechano-optical palpation for pathology detection.</li>
+</ul>
+
+    </div>
+  </label>
+</div>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>One-Shot Object Manipulation and Intrinsic Elastography through Visuo-Tactile Markers</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <ul>
+<li>Pioneered the concept of visuo-tactile markers, combining 3D-printed relief tags with Aruco marker patterns to enable simultaneous vision-based navigation, robotic grasping, and precision tactile manipulation using GelSight Mini sensors.</li>
+<li>Developed a non-intrusive framework for one-shot object manipulation, allowing both robotic and human use without obstructing tool functionality, particularly useful in surgical and industrial settings.</li>
+<li>Enabled indirect intrinsic elastography by integrating force sensors on robotic manipulators with visuo-tactile markers, providing real-time measurement of tool pressure and deflection for precise soft tissue characterization and pressure-sensitive tool manipulation.</li>
+<li>Demonstrated the application of these markers in surgical instruments, enhancing robotic-assisted surgery through improved tool localization, grasp stability, and tissue interaction feedback.</li>
+<li>Validated the approach in diverse scenarios, including delicate object manipulation and intraoperative settings, showcasing its versatility and robustness in dynamic environments.</li>
+</ul>
+
+    </div>
+  </label>
+</div>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Semantic Image--Pose Matching for Soft Body Deformation Mitigation in Low-Rate Single-Pixel Fast Dynamic Large-Area Microscopy</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <ul>
+<li>Developed a novel framework leveraging multimodal image-text embeddings based on VisualBERT/CLIP and hierarchical navigable small worlds (HNSW) search to enable robust pose-informed image matching for unstructured scanning on soft body surfaces.</li>
+<li>Introduced transformer-based semantic descriptors as an alternative to classical feature-based methods (e.g., SIFT, SURF), overcoming limitations in multimodal settings with significant image attenuation across sequential scans.</li>
+<li>Combined spatial location tagging from electromagnetic (EM) trackers with semantic embeddings to enable rapid 3D image reconstruction and comparison, even among disparate datasets, using techniques such as 3D Gaussian splatting.</li>
+<li>Enabled seamless interplay between coarse handheld scanning and high-precision robotic scanning, facilitating information transfer in multimodal soft body imaging scenarios without requiring extensive pre-processing or calibration.</li>
+<li>Demonstrated the framework&rsquo;s effectiveness in mitigating soft tissue deformation during low-rate single-pixel imaging, ensuring accurate large-area microscopy under varying pressure and pose uncertainty conditions.</li>
+</ul>
+
+    </div>
+  </label>
+</div>
+
+<h3 id="recessed-augmented-reality-markers-rams">Recessed Augmented Reality Markers (RAMs)</h3>
+<blockquote>
+<p><em><strong>Enabling one-shot precision manipulation of everyday objects using visual and tactile sensing.</strong></em> 
+
+<i class="fas  fa-fingerprint "></i></p>
+</blockquote>
+<p>Recessed AR Markers (RAMs) provide a new way to enable precision robotic interactions with everyday objects, while still keeping them usable by humans—without the need for reinforcement learning. These markers have been validated in practice using GelSight Mini sensors, with a manuscript detailing these techniques currently under preparation.</p>
+<figure>
+<img src="/images/RAMs.png" style="max-width: 100%" class="center" alt="3D printed visuotactile recessed AR markers (RAMs).">
+<figcaption>
+<small>
+3D printed visuotactile recessed AR markers (RAMs).
+</small>
+</figure>
+<p><a href="/images/RAMs_matching.png"><img src="/images/RAMs_matching.png" alt="Rapid SIFT-based feature matching with database markers after preprocessing."></a>
+<small>
+Rapid SIFT-based feature matching with database markers after preprocessing.
+</small></p>
+<p><a href="/images/RAMs_time_series.png"><img src="/images/RAMs_time_series.png" alt="Spatiotemporal grasp tracking using RAMs and adaptive filtering."></a>
+<small>
+Spatiotemporal grasp tracking using RAMs and adaptive Savitzy-Golay filtering.
+</small></p>
+<h3 id="lodestar">Lodestar</h3>
+<blockquote>
+<p><em><strong>C++ digital guidance, navigation and control framework</strong></em> 
+
+<i class="fas  fa-code-branch "></i></p>
+</blockquote>
+<p>Lodestar provides a user friendly platform-agnostic framework for real-time linear control of dynamic systems.</p>
+<h4 id="overview-1">Overview</h4>
+<ul>
+<li>
+
+<i class="fas  fa-code "></i>   <strong>Language</strong>: C++11 / Python (bindings)</li>
+<li>
+
+<i class="fas  fa-balance-scale "></i>   <strong>License</strong>: BSD-3</li>
+<li>
+
+<i class="fas  fa-tasks "></i>    <strong>Status</strong>: In active development.</li>
+<li>
+
+<i class="fas  fa-globe "></i>    <strong>Website</strong>: <a href="https://lodestarengine.org">https://lodestarengine.org</a> ; <a href="https://theory.ldstr.dev">https://theory.ldstr.dev</a> .</li>
+</ul>
+<p>The Lodestar framework <a href="#El-Kebir2023">[1]</a> consists of several templates that allow for control of linear discrete time systems. The following features are implemented:</p>
+<ul>
+<li><strong>Discrete-time linear time invariant systems modeling and control</strong>:
+<ul>
+<li>Template-based object oriented framework for arbitrary finite dimensional linear systems</li>
+<li>Linear Quadratic Regulation (LQR)</li>
+<li>Linear Quadratic Estimation/Classical Kalman Filter (LQE/KF)</li>
+</ul>
+</li>
+</ul>
+<h4 id="planned-features">Planned features</h4>
+<p>The following capabilities are planned for Lodestar in the near future:</p>
+<ul>
+<li>Continuous to discrete time zero-order hold conversion</li>
+<li>Recursive algebraic Riccati equation (ARE) solver</li>
+<li>Recursive Least Squares (RLS) system identification</li>
+<li>Single-input single-output (SISO) Generalized Predictive Control (GPC)</li>
+<li>Spatial value functions (SVF) based guidance and path planning <a href="#Mettler2010">[2]</a></li>
+<li>Real-time plotting and performance evaluation (impulse, unit step repsonse, Bode/Nyquist plots) frontend</li>
+<li><a href="https://developers.google.com/protocol-buffers">Google Protocol Buffers</a>-based message passing interface for real-time logging and command</li>
+<li>I/O interface for common sensors (e.g., IMUs, barometers, time-of-flight sensors) and servos (e.g., solenoids, brushless DC motors).</li>
+</ul>
+<h4 id="links">Links</h4>
+<ul>
+<li>Lodestar is powered by:
+<ul>
+<li>Eigen: <a href="http://eigen.tuxfamily.org/">http://eigen.tuxfamily.org/</a></li>
+<li>neither: <a href="https://github.com/LoopPerfect/neither">https://github.com/LoopPerfect/neither</a></li>
+</ul>
+</li>
+<li>Related projects:
+<ul>
+<li>SLICOT (Subroutine Library in Systems and Control Theory): <a href="http://slicot.org/">http://slicot.org/</a></li>
+<li>Control Toolbox: <a href="https://github.com/ethz-adrl/control-toolbox">https://github.com/ethz-adrl/control-toolbox</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="references">References</h4>
+<p><a id="El-Kebir2023"></a>[1] H. El-Kebir, J. Bentsman, and M. Ornik, &ldquo;Lodestar: An Integrated Embedded Real-Time Control Engine,&rdquo; in <em>2023 Conference on Control Technology and Applications</em>. Bridgetown, Barbados: IEEE, 2023.</p>
+<p><a id="Mettler2010"></a>[2] Mettler, B., Dadkhah, N., and Kong, Z. “Agile Autonomous Guidance Using Spatial Value Functions.” <em>Control Engineering Practice</em>, Vol. 18, No. 7, 2010, pp. 773–788. doi:10.1016/j.conengprac.2010.02.013.</p>
+<hr>
+<h3 id="knifefish">Knifefish</h3>
+<blockquote>
+<p><em><strong>A light-weight framework for robotic electrosurgery</strong></em> 
+
+<i class="fas  fa-fish "></i></p>
+</blockquote>
+<p>Knifefish is a framework for real-time control and simulation of electrosurgical processes, allowing for sensor data processing and feedback control.</p>
+<h4 id="overview-2">Overview</h4>
+<ul>
+<li>
+
+<i class="fas  fa-code "></i>   <strong>Language</strong>: C++11</li>
+<li>
+
+<i class="fas  fa-balance-scale "></i>   <strong>License</strong>: <em>TBD</em></li>
+<li>
+
+<i class="fas  fa-tasks "></i>    <strong>Status</strong>: In active development</li>
+</ul>
+<h2 id="pastshelved-projects">Past/shelved projects</h2>
+<h3 id="stratagem3d">Stratagem3D</h3>
+<blockquote>
+<p><em><strong>A light-weight web-based game engine for 3D turn-based strategy games</strong></em> 
+
+<i class="fas  fa-chess-knight "></i></p>
+</blockquote>
+<h4 id="overview-3">Overview</h4>
+<ul>
+<li>
+
+<i class="fas  fa-code "></i>   <strong>Language</strong>: Haxe/Kha</li>
+<li>
+
+<i class="fas  fa-balance-scale "></i>   <strong>License</strong>: <em>TBD</em></li>
+<li>
+
+<i class="fas  fa-tasks "></i>    <strong>Status</strong>: Shelved</li>
+</ul>
+<hr>
+<h3 id="extendible-orbit-system-3d-eos3d">Extendible Orbit System 3D (EOS3D)</h3>
+<blockquote>
+<p><em><strong>Lightweight orbital mechanics calculation and visualization suite based on matplotlib</strong></em> 
+
+<i class="fas  fa-globe-europe "></i></p>
+</blockquote>
+<h4 id="overview-4">Overview</h4>
+<ul>
+<li>
+
+<i class="fas  fa-code "></i>   <strong>Language</strong>: Python</li>
+<li>
+
+<i class="fas  fa-balance-scale "></i>   <strong>License</strong>: MIT</li>
+<li>
+
+<i class="fas  fa-tasks "></i>    <strong>Status</strong>: Suspended</li>
+</ul>
+<p>The eos3d library is a lightweight orbital mechanics calculation and visualization suite based on matplotlib. It includes orbit visualization, SPACETRACK Two-Line Element retrieval and current satellite position visualization, Solar System orbits and planetary position visualizations and real-time n-body simulations.</p>
+<h4 id="documentation">Documentation</h4>
+<p>The documentation of eos3d-mpl may be downloaded via the following link: <a href="https://github.com/EOS3D/eos3d-mpl/raw/master/docs/documentation.pdf">documentation</a>.</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+  
+
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+
+<div class="book-languages">
+
+  <ul>
+    <li class="flex">
+      <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="https://hamza.el-kebir.info/" class="flex">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://hamza.el-kebir.info/ja/docs/projects/" class="flex">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Japanese
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://hamza.el-kebir.info/nl/docs/projects/" class="flex">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Dutch
+      </a>
+    </li>
+    
+  </ul>
+
+</div>
+
+  
+
+  
+
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-2 fixed">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#projects">Projects</a>
+      <ul>
+        <li><a href="#current-projects">Current projects</a>
+          <ul>
+            <li><a href="#margindx">MarginDx</a></li>
+            <li><a href="#recessed-augmented-reality-markers-rams">Recessed Augmented Reality Markers (RAMs)</a></li>
+            <li><a href="#lodestar">Lodestar</a></li>
+            <li><a href="#knifefish">Knifefish</a></li>
+          </ul>
+        </li>
+        <li><a href="#pastshelved-projects">Past/shelved projects</a>
+          <ul>
+            <li><a href="#stratagem3d">Stratagem3D</a></li>
+            <li><a href="#extendible-orbit-system-3d-eos3d">Extendible Orbit System 3D (EOS3D)</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -1,22 +1,231 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="State Space"><meta property="og:title" content><meta property="og:description" content="Introduction to State Space   $$ \mathbf{\Sigma}_{\mathrm{CTLTI}} = \begin{cases} \dot{\mathbf{x}}(t) &= \mathbf{A} \mathbf{x}(t) &#43; \mathbf{B} \mathbf{u}(t) \\ \mathbf{y}(t) &= \mathbf{C} \mathbf{x}(t) &#43; \mathbf{D} \mathbf{u}(t) \end{cases} $$ $$ \mathbf{\Sigma}_{\mathrm{DTLTI}} = \begin{cases} \mathbf{x}(k+1) &= \mathbf{\Phi} \mathbf{x}(k) &#43; \mathbf{\Gamma} \mathbf{u}(k) \\ \mathbf{y}(k) &= \mathbf{C} \mathbf{x}(k) &#43; \mathbf{D} \mathbf{u}(k) \end{cases} $$   graph LR Guidance -- Navigation Navigation -- Control Control -- Guidance Navigation -- Guidance Fig. 1: Basic flowdown of GN&C"><meta property="og:type" content="article"><meta property="og:url" content="https://hamza.el-kebir.info/docs/gincy/StateSpace/"><meta property="article:modified_time" content="2020-05-24T16:11:05+02:00"><title>State Space | Hamza El-Kebir</title><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.3a57fe8cef5ef9513c91e42c8ede70b1ceffa54e64b01cba3e4ddb9fc458f2c8.css integrity="sha256-Olf+jO9e+VE8keQsjt5wsc7/pU5ksBy6Pk3bn8RY8sg="><script defer src=/en.search.min.3f07e2788e54d02a246f7ee32772e59df6ffc61bda1069e0cc9330cb2980bb9b.js integrity="sha256-PwfieI5U0Cokb37jJ3Llnfb/xhvaEGngzJMwyymAu5s="></script></head><body><input type=checkbox class=hidden id=menu-control><main class="flex container"><aside class="book-menu fixed"><nav><h2 class=book-brand><a href=https://hamza.el-kebir.info><img src=/logo.png alt=Logo><span>Hamza El-Kebir</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64><div class="book-search-spinner spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><p><a href=/docs/about/><strong>About Me</strong></a></p></li><li><p><a href=/docs/cv/><strong>Curriculum Vitae</strong></a></p></li><li><p><a href=/docs/projects/><strong>Projects</strong></a></p></li><li><p><a href=/docs/research/><strong>Research</strong></a><br></p></li><li><p><a href=/posts/><strong>Blog</strong></a></p></li></ul><blockquote></blockquote></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class="flex align-center justify-between book-header"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
-<strong>State Space</strong></header><article class=markdown><h1 id=introduction-to-state-space>Introduction to State Space</h1><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css integrity=sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js integrity=sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js integrity=sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI crossorigin=anonymous onload=renderMathInElement(document.body);></script><p class=katex>$$
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="State Space"><meta property="og:title" content="" />
+<meta property="og:description" content="Introduction to State Space $$ \mathbf{\Sigma}_{\mathrm{CTLTI}} = \begin{cases} \dot{\mathbf{x}}(t) &= \mathbf{A} \mathbf{x}(t) &#43; \mathbf{B} \mathbf{u}(t) \\ \mathbf{y}(t) &= \mathbf{C} \mathbf{x}(t) &#43; \mathbf{D} \mathbf{u}(t) \end{cases} $$ $$ \mathbf{\Sigma}_{\mathrm{DTLTI}} = \begin{cases} \mathbf{x}(k&#43;1) &= \mathbf{\Phi} \mathbf{x}(k) &#43; \mathbf{\Gamma} \mathbf{u}(k) \\ \mathbf{y}(k) &= \mathbf{C} \mathbf{x}(k) &#43; \mathbf{D} \mathbf{u}(k) \end{cases} $$ graph LR Guidance --&gt; Navigation Navigation --&gt; Control Control --&gt; Guidance Navigation --&gt; Guidance Fig. 1: Basic flowdown of GN&C " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hamza.el-kebir.info/docs/gincy/StateSpace/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2020-05-24T16:11:05+02:00" />
+
+<title>State Space | Hamza El-Kebir</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.69d64cac3478d78c3092ff7e8e19c4b448ddbfda474335bb72d74f7162930a30.css" integrity="sha256-adZMrDR414wwkv9&#43;jhnEtEjdv9pHQzW7ctdPcWKTCjA=">
+
+
+<script defer src="/en.search.min.2e2ced91eab618fd8187130fa7af701390fa8c660a198a01e152c9700687ebfd.js" integrity="sha256-Liztkeq2GP2BhxMPp69wE5D6jGYKGYoB4VLJcAaH6/0="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://hamza.el-kebir.info"><img src="/logo.png" alt="Logo" /><span>Hamza El-Kebir</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    <ul>
+<li>
+<p><a href="/docs/about/"><strong>About Me</strong></a></p>
+</li>
+<li>
+<p><a href="/docs/cv/"><strong>Curriculum Vitae</strong></a></p>
+</li>
+<li>
+<p><a href="/docs/projects/"><strong>Projects</strong></a></p>
+</li>
+<li>
+<p><a href="/docs/research/"><strong>Research</strong></a>
+<br /></p>
+</li>
+<li>
+<p><a href="/posts/"><strong>Blog</strong></a></p>
+</li>
+</ul>
+<!-- - [**Gincy <br> *On Guidance, Navigation & Control***](/docs/gincy/)
+   - [Introduction to State Space](/docs/gincy/StateSpace/) -->
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+  <strong>State Space</strong>
+</header>
+
+      
+<article class="markdown"><h1 id="introduction-to-state-space">Introduction to State Space</h1>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+
+
+<p class="katex">
+  $$
 \mathbf{\Sigma}_{\mathrm{CTLTI}} =
 \begin{cases}
-\dot{\mathbf{x}}(t) &= \mathbf{A} \mathbf{x}(t) + \mathbf{B} \mathbf{u}(t) \\
-\mathbf{y}(t) &= \mathbf{C} \mathbf{x}(t) + \mathbf{D} \mathbf{u}(t)
+   \dot{\mathbf{x}}(t) &= \mathbf{A} \mathbf{x}(t) + \mathbf{B} \mathbf{u}(t) \\
+   \mathbf{y}(t) &= \mathbf{C} \mathbf{x}(t) + \mathbf{D} \mathbf{u}(t)
 \end{cases}
-$$</p><p class=katex>$$
+$$
+</p>
+
+
+
+
+<p class="katex">
+  $$
 \mathbf{\Sigma}_{\mathrm{DTLTI}} =
 \begin{cases}
-\mathbf{x}(k+1) &= \mathbf{\Phi} \mathbf{x}(k) + \mathbf{\Gamma} \mathbf{u}(k) \\
-\mathbf{y}(k) &= \mathbf{C} \mathbf{x}(k) + \mathbf{D} \mathbf{u}(k)
+   \mathbf{x}(k+1) &= \mathbf{\Phi} \mathbf{x}(k) + \mathbf{\Gamma} \mathbf{u}(k) \\
+   \mathbf{y}(k) &= \mathbf{C} \mathbf{x}(k) + \mathbf{D} \mathbf{u}(k)
 \end{cases}
-$$</p><center><script src=/mermaid.min.js></script><p class=mermaid>graph LR
-Guidance --> Navigation
-Navigation --> Control
-Control --> Guidance
-Navigation --> Guidance</p>Fig. 1: Basic flowdown of GN&C</center></article><div class="book-footer justify-between"><div class=book-languages><ul><li class=flex><img src=/svg/translate.svg class=book-icon alt=Languages>
-English</li></ul><ul class=book-languages-list><li class=active><a href=https://hamza.el-kebir.info/ class=flex><img src=/svg/translate.svg class=book-icon alt=Languages>
-English</a></li><li><a href=https://hamza.el-kebir.info/ja/ class=flex><img src=/svg/translate.svg class=book-icon alt=Languages>
-Japanese</a></li><li><a href=https://hamza.el-kebir.info/nl/ class=flex><img src=/svg/translate.svg class=book-icon alt=Languages>
-Dutch</a></li></ul></div></div></div><aside class="book-toc levels-2 fixed"><nav id=TableOfContents><ul><li><a href=#introduction-to-state-space>Introduction to State Space</a></li></ul></nav></aside></main></body></html>
+$$
+</p>
+
+
+<center>
+
+
+<script src="/mermaid.min.js"></script>
+
+
+
+<p class="mermaid">
+graph LR
+    Guidance --> Navigation
+    Navigation --> Control
+    Control --> Guidance
+    Navigation --> Guidance
+</p>
+
+Fig. 1: Basic flowdown of GN&C
+</center></article>
+
+      <div class="book-footer justify-between">
+  
+  
+
+
+  
+
+  
+
+  
+
+
+
+<div class="book-languages">
+
+  <ul>
+    <li class="flex">
+      <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="https://hamza.el-kebir.info/" class="flex">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://hamza.el-kebir.info/ja/" class="flex">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Japanese
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://hamza.el-kebir.info/nl/" class="flex">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Dutch
+      </a>
+    </li>
+    
+  </ul>
+
+</div>
+
+  
+
+  
+
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-2 fixed">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-state-space">Introduction to State Space</a></li>
+  </ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

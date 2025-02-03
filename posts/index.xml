@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on Hamza El-Kebir</title><link>https://hamza.el-kebir.info/posts/</link><description>Recent content in Blog on Hamza El-Kebir</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 04 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hamza.el-kebir.info/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Sixel Graphics</title><link>https://hamza.el-kebir.info/posts/sixel-graphics/</link><pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate><guid>https://hamza.el-kebir.info/posts/sixel-graphics/</guid><description>Reading time: 1 minutes and 7 seconds.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Hamza El-Kebir</title>
+    <link>https://hamza.el-kebir.info/posts/</link>
+    <description>Recent content in Blog on Hamza El-Kebir</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://hamza.el-kebir.info/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sixel Graphics</title>
+      <link>https://hamza.el-kebir.info/posts/sixel-graphics/</link>
+      <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://hamza.el-kebir.info/posts/sixel-graphics/</guid>
+      <description>Reading time: 1 minutes and 6 seconds.
 What are Sixels? VT330/VT340 Programmer Reference Manual, Ch. 14 Sixel Graphics.
 Escape Character DCS (Device Control String): 0x90
 OR
@@ -7,8 +22,32 @@ Termination ST (String Terminator) 0x0
 OR
 ESC+\: 0x1B + 0x5C
 Control Functions LSB (least-significant bit) at the top.
-&amp;gt;&amp;gt;&amp;gt; 0x90 0x40 = 0x90 0b000001 ■ □ □ □ □ □ &amp;gt;&amp;gt;&amp;gt; 0x90 0x74 = 0x90 0b110100 ■ □ ■ □ ■ ■ &amp;gt;&amp;gt;&amp;gt; sixel2str = lambda i : &amp;#39;\n&amp;#39;.</description></item><item><title>Collisions with Signed Distance Functions</title><link>https://hamza.el-kebir.info/posts/signed-distance-functions-collision/</link><pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate><guid>https://hamza.el-kebir.info/posts/signed-distance-functions-collision/</guid><description>Reading time: 0 minutes and 1 second.
-Introduction</description></item><item><title>On Signed Distance Functions</title><link>https://hamza.el-kebir.info/posts/signed-distance-functions/</link><pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate><guid>https://hamza.el-kebir.info/posts/signed-distance-functions/</guid><description>Reading time: 12 minutes and 41 seconds.
+&amp;gt;&amp;gt;&amp;gt; 0x90 0x40 = 0x90 0b000001 ■ □ □ □ □ □ &amp;gt;&amp;gt;&amp;gt; 0x90 0x74 = 0x90 0b110100 ■ □ ■ □ ■ ■ &amp;gt;&amp;gt;&amp;gt; sixel2str = lambda i : &amp;#39;\n&amp;#39;.</description>
+    </item>
+    <item>
+      <title>Collisions with Signed Distance Functions</title>
+      <link>https://hamza.el-kebir.info/posts/signed-distance-functions-collision/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://hamza.el-kebir.info/posts/signed-distance-functions-collision/</guid>
+      <description>Reading time: 0 minutes and 1 second.
+Introduction </description>
+    </item>
+    <item>
+      <title>On Signed Distance Functions</title>
+      <link>https://hamza.el-kebir.info/posts/signed-distance-functions/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://hamza.el-kebir.info/posts/signed-distance-functions/</guid>
+      <description>Reading time: 16 minutes and 34 seconds.
 Introduction Formal Definition In more rigorous terms, signed distance functions (aka SDFs) are defined as functions that satisfy a particular form of the eikonal equation1. The general eikonal equation is of the form:
 $$||\nabla u(x)|| = \frac{1}{f(x)},\quad x \in \Omega,$$
-where \(\Omega\) is an open set in \(\mathbb{R}^n\), and \(f(x) : \mathbb{R}^n \to \mathbb{R}\) is a function with positive values. In physical terms, the solution \(u(x)\) to this nonlinear partial differential equation can be interpreted as the shortest time needed to travel from the boundary \(\partial\Omega\) to \(x \in \Omega\), with \(f(x)\) being the speed at \(x\).</description></item><item><title/><link>https://hamza.el-kebir.info/posts/3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hamza.el-kebir.info/posts/3/</guid><description>3</description></item></channel></rss>
+where \(\Omega\) is an open set in \(\mathbb{R}^n\), and \(f(x) : \mathbb{R}^n \to \mathbb{R}\) is a function with positive values. In physical terms, the solution \(u(x)\) to this nonlinear partial differential equation can be interpreted as the shortest time needed to travel from the boundary \(\partial\Omega\) to \(x \in \Omega\), with \(f(x)\) being the speed at \(x\).</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://hamza.el-kebir.info/posts/3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hamza.el-kebir.info/posts/3/</guid>
+      <description>3 </description>
+    </item>
+  </channel>
+</rss>

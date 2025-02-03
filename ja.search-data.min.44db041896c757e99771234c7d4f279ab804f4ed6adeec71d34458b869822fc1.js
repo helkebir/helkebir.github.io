@@ -1,0 +1,48 @@
+"use strict";(function(){const t={encode:!1,tokenize:function(e){return e.replace(/[\x00-\x7F]/g,"").split("")}};t.doc={id:"id",field:["title","content"],store:["title","href"]};const e=FlexSearch.create("balance",t);window.bookSearchIndex=e,e.add({id:0,href:"/ja/docs/projects/",title:"プロジェクト",content:`プロジェクト 推定完読時間: 8分 4秒
+現在のプロジェクト Stratagem3D A light-weight web-based game engine for 3D turn-based strategy games Overview Language: Haxe/Kha License: TBD Status: In active development Lodestar C++ digital guidance, navigation and control framework Lodestar provides a user friendly platform-agnostic framework for real-time linear control of dynamic systems.
+Overview Language: C++14 License: MIT Status: In active development The Lodestar framework consists of several templates that allow for control of linear discrete time systems. The following features are implemented:
+Discrete-time linear time invariant systems modeling and control: Template-based object oriented framework for arbitrary finite dimensional linear systems Linear Quadratic Regulation (LQR) Linear Quadratic Estimation/Classical Kalman Filter (LQE/KF) Planned features The following capabilities are planned for Lodestar in the near future:
+Continuous to discrete time zero-order hold conversion Recursive algebraic Riccati equation (ARE) solver Recursive Least Squares (RLS) system identification Single-input single-output (SISO) Generalized Predictive Control (GPC) Spatial value functions (SVF) based guidance and path planning [1] Real-time plotting and performance evaluation (impulse, unit step repsonse, Bode/Nyquist plots) frontend Google Protocol Buffers-based message passing interface for real-time logging and command I/O interface for common sensors (e.g., IMUs, barometers, time-of-flight sensors) and servos (e.g., solenoids, brushless DC motors). Links Lodestar is powered by: Eigen: http://eigen.tuxfamily.org/ neither: https://github.com/LoopPerfect/neither Related projects: SLICOT (Subroutine Library in Systems and Control Theory): http://slicot.org/ Control Toolbox: https://github.com/ethz-adrl/control-toolbox References [1] Mettler, B., Dadkhah, N., and Kong, Z. “Agile Autonomous Guidance Using Spatial Value Functions.” Control Engineering Practice, Vol. 18, No. 7, 2010, pp. 773–788. doi:10.1016/j.conengprac.2010.02.013.
+過去プロジェクト Extendible Orbit System 3D (EOS3D) Lightweight orbital mechanics calculation and visualization suite based on matplotlib Overview Language: Python License: MIT Status: Suspended The eos3d library is a lightweight orbital mechanics calculation and visualization suite based on matplotlib. It includes orbit visualization, SPACETRACK Two-Line Element retrieval and current satellite position visualization, Solar System orbits and planetary position visualizations and real-time n-body simulations.
+Documentation The documentation of eos3d-mpl may be downloaded via the following link: documentation.
+`}),e.add({id:1,href:"/ja/docs/research/",title:"研究",content:`研究 推定完読時間: 9分 31秒
+研究分野 不具合（制御研の減少、及びダイナミクスの変化）が発生した場合、システムの到達性・生存性をオンラインで計算する方法の研究。当理論は非線形システムを中心としたものです。
+分布パラメータシステム（偏微分方程式）の安全制御。自律手術（特に電気外科手術）への応用。
+学術論文 査読付き論文 学術雑誌 B. Petrus*, Z. Chen*, H. El-Kebir*, J. Bentsman, and B.G. Thomas, &ldquo;Solid Boundary Output Feedback Control of The Stefan Problem: The Enthalpy Approach,&rdquo; IEEE Transactions on Automatic Control, 2021. 改正版投稿済み.
+H. El-Kebir and Melkior Ornik, &ldquo;Online Guaranteed Reachable Set Approximation for Systems with Changed Dynamics and Control Authority,&rdquo; IEEE Transactions on Automatic Control, 2021. 審査中.
+S. Zhang, J. Bentsman, X. Lou, C. Neuschaefer, Y. Lee, and H. El-Kebir, &ldquo;Multiresolution GPC-Structured Control of a Single-Loop Cold-Flow Chemical Looping Testbed,&rdquo; Energies, vol. 13, p. 1759, Apr. 2020. https://doi.org/10.3390/en13071759 (オープンアクセス).
+H. El-Kebir, M.C. Mazza, and J.C.M. Liu, &ldquo;Perceptions of Open Innovation at CERN: An Explorative Study,&rdquo; CERN IdeaSquare Journal of Experimental Innovation, vol. 3, pp. 57–61, 2019. https://doi.org/10.23726/cij.2019.945 (オープンアクセス).
+* 共同第一著者.
+学会出版物 H. El-Kebir*, T. Shafa*, A. Purushottam, M. Ornik, and A. Soylemezoglu, &ldquo;High-Frequency Vibration Reduction for Unmanned Ground Vehicles on Unstructured Terrain,&rdquo; in Proc. of 2021 Modelling &amp; Simulation of Autonomous Systems (MESAS'21) Conference, 2021. 印刷中. (オープンアクセス) H. El-Kebir, Y. Lee, R. Berlin, E. Benedetti, P. C. Giulianotti, L. P. Chamorro, and J. Bentsman, &ldquo;Online Hypermodel-based Path Planning for Feedback Control of Tissue Denaturation in Electrosurgical Cutting,&rdquo; in Proc. of 11th IFAC Symposium on Biological and Medical Systems, Ghent, Belgium, 2021. 印刷中. (オープンアクセス) H. El-Kebir and M. Ornik, &ldquo;Online Inner Approximation of Reachable Sets of Nonlinear Systems with Diminished Control Authority,&rdquo; in Proc. of 2021 Conference on Control and Its Applications, (Philadelphia, PA), pp. 9–16, Society for Industrial and Applied Mathematics, 2021. https://doi.org/10.1137/1.9781611976847.2 (オープンアクセス) H. El-Kebir and J. Bentsman, &ldquo;PDE-Based Modeling and Non-collocated Feedback Control of Electrosurgical-Probe/Tissue Interaction,&rdquo; in 2021 American Control Conference (ACC). New Orleans, LA, USA: IEEE, 2021, pp. 4045–4050. https://doi.org/10.23919/ACC50511.2021.9483240 (オープンアクセス) * 共同第一著者.
+査読無し論文 学会出版物 El-Kebir, H., &amp; Ornik, M. (2020). In-flight Air Density Estimation and Prediction for Hypersonic Flight Vehicles. In 23rd AIAA International Space Planes and Hypersonic Systems and Technologies Conference. https://doi.org/10.2514/6.2020-2412 (オープンアクセス) 報道された研究 2021年 NASA LEAPFROGコンクールで挙げてきた成果について、イリノイ大学宇宙航空工学科のサイトにて取材の記事が投稿されました（英語で）: Illinois team wins NASA&rsquo;s LEAPFROG challenge.
+2020年 私が開発した飛行中の空気密度測定歩法に関する研究はイリノイ大学宇宙航空工学科のサイトに載っている記事で説明されました（英語で）: Predicting in-flight air density for more accurate landing | Aerospace at Illinois.
+`}),e.add({id:2,href:"/ja/docs/about/",title:"私について",content:`私について 自己紹介 私はハムザと申します、宇宙航空工学科の博士号取得候補者です。私はありとあらゆる飛んでいるものが好きでして、それに於いてその誘導法が一番興味深いと思います。
+ハードウェアやソフトを開発して、自分の理論を試す事に興味を持っています；理論と現実を相合わせることこそが最大のモチベーションの源です。
+研究に励んでいない時は大体ハイキングかソフト開発、もしくはテニスや柔術の練習をすることが趣味です。
+写真: 私 `}),e.add({id:3,href:"/ja/docs/cv/",title:"履歴",content:`履歴 略伝 誘導法や状態観測法に関する研究を行なっている宇宙航空工学生。
+学術 イリノイ大学アーバナ・シャンペーン校 &mdash; 博士号取得候補者 2020年8月〜 アーバナ・シャンペーン、イリノイ州 Jointly supervised PhD program in Aerospace Engineering and Mechanical Science and Engineering, focusing on control theory, especially regarding safety-critical control in environments with limited prior knowledge, as well as biomedical applications.
+デルフト工科大学 &mdash; 宇宙航空工学学部生 2017年9月〜2020年7月 (3年間) in デルフト、オランダ 宇宙航空工学学部資格。「Upset prevention and recovery training」（UPRT）を可能とするフライトシミュレーターの開発に関する卒業論文賞。
+デルフト工科大学 &mdash; オナーズ・プログラム学部生 2018年9月〜2020年7月 (2年間) in デルフト、オランダ 優等生向けのプログラムで、研究や他学部学生との科目を含めたプログラムです。研究は距離権限のある観測ロケットの誘導方式についてでした。他学部学生共有のプログラムは全世界発展工学やCERNでのサマースクールを含めたものです。
+イリノイ大学アーバナ・シャンペーン校 &mdash; 留学生 2019年8月〜2020年1月 (5ヶ月間) in アーバナ・シャンペーン、イリノイ州 極超音速空気力学、リアルタイムデジタル制御や機械学習を中心にした一学期の留学。ついでに自習研究として飛行中の環境変更を了承した、環境パラメートルを予測できるためのアルゴリズム開発の研究も。
+インターンシップ CERN &mdash; CERN Honours Programme Summer School 2019年7月 (1ヶ月間) in メイラン、ジュネーヴ州、スイス連邦 CERN IdeaSquareでのサマースクール、三週間の間に他科目の大学生と共に新技術を研究し、それを社会的課題の解決に役立てるために熱心すること。
+欧州宇宙機関 - ESA &mdash; Introduction to Space Law Training Course 2019年6月 (1週間) in レデゥ、ベルギー 宇宙法やその欧州での実施についての一週間のトレーニングコース。登壇者方にはESAからの専門家や各国の国立宇宙機関の関係者と国連宇宙空間平和利用委員会の委員長などがありました。最後に模擬国連合総会が開催されました。
+課外活動 The Illinois Space Society &mdash; Technical Manager 2019年9月&ndash;2020年1月 (5ヶ月間) in アーバナ・シャンペーン、イリノイ州 観測ロケットやの開発指揮を担って、テクニカルマネージャーとしてイリノイ大学の「NASA University Student Launch Initiative」チームを取り締まりました。
+Delft Aerospace Rocket Engineering &mdash; Flight Simulations Engineer 2018年11月&ndash;2019年8月 (10ヶ月間) in デルフト、オランダ 観測ロケットの飛行シミュレーションプログラムの開発に取り掛かりました。
+TV Tokyo &mdash; Deelname aan een programma van TV Tokyo 2016年12月, 2017年8月 in Japan
+テレビ東京が制作した「日本行きたい人応援団」というテレビ番組に参加しました。本編は青森県・津軽地方における津軽弁についてのものです。
+仕事 Fugro ICT B.V. &mdash; Helpdesk Employee 2018年7月&ndash;2018年8月 (2ヶ月間) in ライツヘンダム、オランダ サービスデスクでの仕事の協力、及びPython言語で開発したソフトウェアによる事務機械化を実現させること。更に様々なICTキャンペーンを企画し、ICTアセット交換企画設計や業務員・支部別のソフトウェア・ハードウェアデータベースを設計したことも。
+資格 Test of English as a Foreign Language (TOEFL iBT) &mdash; 117/120点 2019年11月。
+日本語能力試験 &mdash; １級 2017年8月, 93パーセンタイル。
+International Baccalaureate &mdash; Higher Level English 2017年7月, 6/7点。
+Cambridge English Certificate in Advanced English &mdash; レベル A (CEFR C2 レベル) 2015年7月。
+賞 Engineering Council &mdash; 今月の協会員 2019年9月。
+イリノイ大学の Engineering Council が賞与した尊号。
+在オランダ日本大使館 &mdash; 第３０回日本語弁論大会最優秀賞 2017年3月。
+能力 言語能力 オランダ語: 書き・話し言葉に於いて流暢 英語: 書き・話し言葉に於いて流暢 日本語: 書き・話し言葉に於いて流暢 アラビア語: 書き・話し言葉に於いて平凡 仏語: 書き・話し言葉に於いて平凡 コンピューター能力 基本 CSS, XML, Ada 2012
+中間 Ruby, OpenFOAM, MOOSE
+該博 Microsoft Office, Adobe Creative Suite (Photoshop, Illustrator, After Effects), Microsoft Windows, Linux, HTML, JavaScript, C/C++, Haxe, Python, bash, LaTeX。
+`}),e.add({id:4,href:"/ja/categories/",title:"Categories",content:""}),e.add({id:5,href:"/ja/docs/",title:"Docs",content:""}),e.add({id:6,href:"/ja/",title:"HP",content:`ようこそ! 私はハムザ・ルケビルと申します。宇宙航空工学生、誘導・航法・誘導制御の分野に対して深く興味を持っています。
+This page in English? Liever in het Nederlands?
+小伝 私は誘導・制御理論の分野における問題解決・技術開発を中心に活動している一学生です。理論だけでなく、現実の於いても制御法の出番があれば興味が湧いてきます。現在、興味のある研究分野は、システムの故障発生後にでも安全を保障できる制御理論の開発、並びに分布パラメーターシステム制御とその応用（特に自律手術に）。
+自転車走行、読書、武道が趣味です。
+このサイトに何が載っている？ 履歴の他にも自分のオープンソースプロジェクトがあって、またはその説明書（他にも左側のメニューに載っています）。近日中に誘導・航法・誘導制御の世界の見所を披露したブログを始めたいと思っています。 SNS GitHub (@helkebir) LinkedIn Facebook `}),e.add({id:7,href:"/ja/tags/",title:"Tags",content:""})})()
